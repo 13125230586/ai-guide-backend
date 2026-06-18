@@ -1,0 +1,3883 @@
+{
+  "baseUrl": "http://127.0.0.1:8137",
+  "generatedAt": "2026-06-16T11:00:47",
+  "total": 79,
+  "passed": 77,
+  "warn": 0,
+  "skip": 0,
+  "error": 2,
+  "results": [
+    {
+      "name": "AUTH_LOGIN_TOURIST",
+      "method": "POST",
+      "path": "/api/auth/login",
+      "url": "http://127.0.0.1:8137/api/auth/login",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "id": 2,
+          "username": "tourist",
+          "nickname": "游客_20260616_104550",
+          "avatarUrl": null,
+          "roleCode": "TOURIST",
+          "email": "tourist+api@test.com",
+          "phone": "13800009999",
+          "lastLoginTime": "2026-06-16 10:59:50",
+          "createTime": "2026-06-16 09:16:50"
+        }
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "username": "tourist",
+          "password": "123456"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "AUTH_LOGIN_ADMIN",
+      "method": "POST",
+      "path": "/api/auth/login",
+      "url": "http://127.0.0.1:8137/api/auth/login",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "id": 1,
+          "username": "admin",
+          "nickname": "管理员",
+          "avatarUrl": null,
+          "roleCode": "ADMIN",
+          "email": "admin@aiguide.com",
+          "phone": "13800000001",
+          "lastLoginTime": "2026-06-16 10:45:50",
+          "createTime": "2026-06-16 09:16:50"
+        }
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "username": "admin",
+          "password": "123456"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "SCENIC_CATEGORY_LIST",
+      "method": "GET",
+      "path": "/api/scenic/category/list",
+      "url": "http://127.0.0.1:8137/api/scenic/category/list",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": [
+          {
+            "id": 1,
+            "categoryName": "自然风光",
+            "categoryDesc": "山水、湖泊、森林等自然景观",
+            "sortNo": 1,
+            "categoryStatus": 1,
+            "createTime": "2026-06-16 09:16:50"
+          },
+          {
+            "id": 2,
+            "categoryName": "历史人文",
+            "categoryDesc": "古迹、博物馆、文化遗址等",
+            "sortNo": 2,
+            "categoryStatus": 1,
+            "createTime": "2026-06-16 09:16:50"
+          },
+          {
+            "id": 3,
+            "categoryName": "现代都市",
+            "categoryDesc": "城市地标、商业区、现代建筑",
+            "sortNo": 3,
+            "categoryStatus": 1,
+            "createTime": "2026-06-16 09:16:50"
+          },
+          {
+            "id": 4,
+            "categoryName": "主题乐园",
+            "categoryDesc": "游乐园、动物园、水族馆等",
+            "sortNo": 4,
+            "categoryStatus": 1,
+            "createTime": "2026-06-16 09:16:50"
+          },
+          {
+            "id": 5,
+            "categoryName": "古镇古村",
+            "categoryDesc": "传统村落、古镇、民俗村",
+            "sortNo": 5,
+            "categoryStatus": 1,
+            "createTime": "2026-06-16 09:16:50"
+          },
+          {
+            "id": 6,
+            "categoryName": "海滨度假",
+            "categoryDesc": "海滩、海岛、海滨浴场",
+            "sortNo": 6,
+            "categoryStatus": 1,
+            "createTime": "2026-06-16 09:16:50"
+          }
+        ]
+      },
+      "request": {
+        "params": null,
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "SCENIC_PAGE",
+      "method": "GET",
+      "path": "/api/scenic/page",
+      "url": "http://127.0.0.1:8137/api/scenic/page",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "current": 1,
+          "pageSize": 5,
+          "total": 1,
+          "records": [
+            {
+              "id": 1,
+              "categoryId": 2,
+              "categoryName": "历史人文",
+              "spotName": "故宫博物院",
+              "city": "北京",
+              "address": "北京市东城区景山前街4号",
+              "longitude": 116.397228,
+              "latitude": 39.916527,
+              "coverUrl": null,
+              "summary": "中国明清两代的皇家宫殿，世界上现存规模最大的宫殿型建筑",
+              "description": "故宫博物院成立于1925年，是以明清两代皇宫和宫廷旧藏文物为基础建立的大型综合性博物馆。占地72万平方米，建筑面积约15万平方米，有大小宫殿七十多座，房屋九千余间。收藏有超过186万件文物，是世界上现存规模最大、保存最为完整的木质结构古建筑之一。",
+              "openTime": "08:30-17:00（周一闭馆）",
+              "suggestDuration": "3-4小时",
+              "tips": "建议提前网上预约购票，周一闭馆",
+              "hotScore": 999,
+              "spotStatus": 1,
+              "viewCount": 15682,
+              "createTime": "2026-06-16 09:16:50"
+            }
+          ]
+        }
+      },
+      "request": {
+        "params": {
+          "current": 1,
+          "pageSize": 5,
+          "keyword": "北京"
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "SCENIC_DETAIL",
+      "method": "GET",
+      "path": "/api/scenic/detail",
+      "url": "http://127.0.0.1:8137/api/scenic/detail",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "id": 1,
+          "categoryId": 2,
+          "categoryName": "历史人文",
+          "spotName": "故宫博物院",
+          "city": "北京",
+          "address": "北京市东城区景山前街4号",
+          "longitude": 116.397228,
+          "latitude": 39.916527,
+          "coverUrl": null,
+          "summary": "中国明清两代的皇家宫殿，世界上现存规模最大的宫殿型建筑",
+          "description": "故宫博物院成立于1925年，是以明清两代皇宫和宫廷旧藏文物为基础建立的大型综合性博物馆。占地72万平方米，建筑面积约15万平方米，有大小宫殿七十多座，房屋九千余间。收藏有超过186万件文物，是世界上现存规模最大、保存最为完整的木质结构古建筑之一。",
+          "openTime": "08:30-17:00（周一闭馆）",
+          "suggestDuration": "3-4小时",
+          "tips": "建议提前网上预约购票，周一闭馆",
+          "hotScore": 999,
+          "spotStatus": 1,
+          "viewCount": 15682,
+          "createTime": "2026-06-16 09:16:50"
+        }
+      },
+      "request": {
+        "params": {
+          "id": 1
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "SCENIC_SEARCH",
+      "method": "GET",
+      "path": "/api/scenic/search",
+      "url": "http://127.0.0.1:8137/api/scenic/search",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "current": 1,
+          "pageSize": 5,
+          "total": 1,
+          "records": [
+            {
+              "id": 5,
+              "categoryId": 2,
+              "categoryName": "历史人文",
+              "spotName": "西湖",
+              "city": "杭州",
+              "address": "浙江省杭州市西湖区龙井路1号",
+              "longitude": 120.148732,
+              "latitude": 30.242828,
+              "coverUrl": null,
+              "summary": "欲把西湖比西子，淡妆浓抹总相宜",
+              "description": "西湖位于杭州市区西面，南北长3.3公里，东西宽2.8公里，水面面积约5.66平方公里。环湖四周，绿荫环抱，山色葱茏，画桥烟柳，云树笼纱。西湖十景形成于南宋时期，苏堤春晓、曲院风荷、平湖秋月、断桥残雪等闻名遐迩。2011年列入世界文化遗产。",
+              "openTime": "全天开放",
+              "suggestDuration": "1天",
+              "tips": "免费开放，建议骑行环湖；夜游也很美",
+              "hotScore": 950,
+              "spotStatus": 1,
+              "viewCount": 11200,
+              "createTime": "2026-06-16 09:16:50"
+            }
+          ]
+        }
+      },
+      "request": {
+        "params": {
+          "current": 1,
+          "pageSize": 5,
+          "keyword": "湖"
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "SCENIC_I18N_DETAIL",
+      "method": "GET",
+      "path": "/api/scenic/i18n/detail",
+      "url": "http://127.0.0.1:8137/api/scenic/i18n/detail",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": [
+          {
+            "id": 1,
+            "scenicSpotId": 1,
+            "languageCode": "en-US",
+            "title": "The Forbidden City",
+            "summary": "The imperial palace of Chinese emperors",
+            "description": "The Forbidden City, located in the center of Beijing, was the Chinese imperial palace from the Ming dynasty to the end of the Qing dynasty. It is now home to the Palace Museum.",
+            "tips": "Advance booking recommended. Closed on Mondays."
+          },
+          {
+            "id": 2,
+            "scenicSpotId": 1,
+            "languageCode": "ja-JP",
+            "title": "故宮博物院",
+            "summary": "中国明清時代の皇宮",
+            "description": "故宮博物院は、明・清時代の皇帝の宮殿を基に設立された博物館です。72万平方メートルの敷地に9000以上の部屋があります。",
+            "tips": "事前予約が必要です。月曜日は休館です。"
+          }
+        ]
+      },
+      "request": {
+        "params": {
+          "scenicSpotId": 1
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "SCENIC_I18N_LANG",
+      "method": "GET",
+      "path": "/api/scenic/i18n/lang",
+      "url": "http://127.0.0.1:8137/api/scenic/i18n/lang",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "id": 1,
+          "scenicSpotId": 1,
+          "languageCode": "en-US",
+          "title": "The Forbidden City",
+          "summary": "The imperial palace of Chinese emperors",
+          "description": "The Forbidden City, located in the center of Beijing, was the Chinese imperial palace from the Ming dynasty to the end of the Qing dynasty. It is now home to the Palace Museum.",
+          "tips": "Advance booking recommended. Closed on Mondays."
+        }
+      },
+      "request": {
+        "params": {
+          "scenicSpotId": 1,
+          "languageCode": "en-US"
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "SCENIC_MEDIA_LIST",
+      "method": "GET",
+      "path": "/api/scenic/media/list",
+      "url": "http://127.0.0.1:8137/api/scenic/media/list",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": [
+          {
+            "id": 1,
+            "scenicSpotId": 1,
+            "mediaType": "image",
+            "mediaUrl": "https://communityforum-backendd.oss-cn-hangzhou.aliyuncs.com/scenic/forbidden-city-1.jpg",
+            "mediaName": "故宫全景",
+            "sortNo": 1
+          },
+          {
+            "id": 2,
+            "scenicSpotId": 1,
+            "mediaType": "image",
+            "mediaUrl": "https://communityforum-backendd.oss-cn-hangzhou.aliyuncs.com/scenic/forbidden-city-2.jpg",
+            "mediaName": "太和殿",
+            "sortNo": 2
+          }
+        ]
+      },
+      "request": {
+        "params": {
+          "scenicSpotId": 1
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ROUTE_PAGE",
+      "method": "GET",
+      "path": "/api/route/page",
+      "url": "http://127.0.0.1:8137/api/route/page",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "current": 1,
+          "pageSize": 5,
+          "total": 2,
+          "records": [
+            {
+              "id": 1,
+              "routeName": "北京文化深度游",
+              "theme": "历史文化",
+              "coverUrl": null,
+              "summary": "探索千年古都的文化底蕴",
+              "description": "这条路线将带你深入北京的历史文化核心，从皇家宫殿到现代艺术，感受这座城市的历史与现代交融之美。",
+              "suggestDuration": "2天",
+              "suitableCrowd": "文化爱好者/家庭",
+              "routeStatus": 1,
+              "createTime": "2026-06-16 09:16:50",
+              "scenicSpots": [
+                {
+                  "id": 1,
+                  "categoryId": null,
+                  "categoryName": null,
+                  "spotName": "故宫博物院",
+                  "city": "北京",
+                  "address": null,
+                  "longitude": null,
+                  "latitude": null,
+                  "coverUrl": null,
+                  "summary": "中国明清两代的皇家宫殿，世界上现存规模最大的宫殿型建筑",
+                  "description": null,
+                  "openTime": null,
+                  "suggestDuration": "3-4小时",
+                  "tips": null,
+                  "hotScore": null,
+                  "spotStatus": null,
+                  "viewCount": null,
+                  "createTime": null
+                },
+                {
+                  "id": 9,
+                  "categoryId": null,
+                  "categoryName": null,
+                  "spotName": "上海外滩",
+                  "city": "上海",
+                  "address": null,
+                  "longitude": null,
+                  "latitude": null,
+                  "coverUrl": null,
+                  "summary": "万国建筑博览群，上海标志性景观",
+                  "description": null,
+                  "openTime": null,
+                  "suggestDuration": "1-2小时",
+                  "tips": null,
+                  "hotScore": null,
+                  "spotStatus": null,
+                  "viewCount": null,
+                  "createTime": null
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "routeName": "西安古都探秘",
+              "theme": "历史文化",
+              "coverUrl": null,
+              "summary": "穿越千年，梦回大唐",
+              "description": "西安，十三朝古都，丝绸之路的起点。这条路线将带你领略兵马俑的壮观、古城墙的雄伟、回民街的美食。",
+              "suggestDuration": "2天",
+              "suitableCrowd": "历史爱好者/亲子",
+              "routeStatus": 1,
+              "createTime": "2026-06-16 09:16:50",
+              "scenicSpots": [
+                {
+                  "id": 2,
+                  "categoryId": null,
+                  "categoryName": null,
+                  "spotName": "秦始皇兵马俑",
+                  "city": "西安",
+                  "address": null,
+                  "longitude": null,
+                  "latitude": null,
+                  "coverUrl": null,
+                  "summary": "世界第八大奇迹，中国第一位皇帝的地下军阵",
+                  "description": null,
+                  "openTime": null,
+                  "suggestDuration": "3-4小时",
+                  "tips": null,
+                  "hotScore": null,
+                  "spotStatus": null,
+                  "viewCount": null,
+                  "createTime": null
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "request": {
+        "params": {
+          "current": 1,
+          "pageSize": 5,
+          "theme": "历史文化"
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ROUTE_DETAIL",
+      "method": "GET",
+      "path": "/api/route/detail",
+      "url": "http://127.0.0.1:8137/api/route/detail",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "id": 1,
+          "routeName": "北京文化深度游",
+          "theme": "历史文化",
+          "coverUrl": null,
+          "summary": "探索千年古都的文化底蕴",
+          "description": "这条路线将带你深入北京的历史文化核心，从皇家宫殿到现代艺术，感受这座城市的历史与现代交融之美。",
+          "suggestDuration": "2天",
+          "suitableCrowd": "文化爱好者/家庭",
+          "routeStatus": 1,
+          "createTime": "2026-06-16 09:16:50",
+          "scenicSpots": [
+            {
+              "id": 1,
+              "categoryId": null,
+              "categoryName": null,
+              "spotName": "故宫博物院",
+              "city": "北京",
+              "address": null,
+              "longitude": null,
+              "latitude": null,
+              "coverUrl": null,
+              "summary": "中国明清两代的皇家宫殿，世界上现存规模最大的宫殿型建筑",
+              "description": null,
+              "openTime": null,
+              "suggestDuration": "3-4小时",
+              "tips": null,
+              "hotScore": null,
+              "spotStatus": null,
+              "viewCount": null,
+              "createTime": null
+            },
+            {
+              "id": 9,
+              "categoryId": null,
+              "categoryName": null,
+              "spotName": "上海外滩",
+              "city": "上海",
+              "address": null,
+              "longitude": null,
+              "latitude": null,
+              "coverUrl": null,
+              "summary": "万国建筑博览群，上海标志性景观",
+              "description": null,
+              "openTime": null,
+              "suggestDuration": "1-2小时",
+              "tips": null,
+              "hotScore": null,
+              "spotStatus": null,
+              "viewCount": null,
+              "createTime": null
+            }
+          ]
+        }
+      },
+      "request": {
+        "params": {
+          "id": 1
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ROUTE_RECOMMEND",
+      "method": "GET",
+      "path": "/api/route/recommend",
+      "url": "http://127.0.0.1:8137/api/route/recommend",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": [
+          {
+            "id": 3,
+            "routeName": "杭州诗意之旅",
+            "theme": "自然风光",
+            "coverUrl": null,
+            "summary": "上有天堂，下有苏杭",
+            "description": "漫步西湖边，品味龙井茶，感受杭州的诗意与浪漫。这条路线适合慢慢走、慢慢看。",
+            "suggestDuration": "1-2天",
+            "suitableCrowd": "情侣/文艺青年",
+            "routeStatus": 1,
+            "createTime": "2026-06-16 09:16:50",
+            "scenicSpots": [
+              {
+                "id": 5,
+                "categoryId": null,
+                "categoryName": null,
+                "spotName": "西湖",
+                "city": "杭州",
+                "address": null,
+                "longitude": null,
+                "latitude": null,
+                "coverUrl": null,
+                "summary": "欲把西湖比西子，淡妆浓抹总相宜",
+                "description": null,
+                "openTime": null,
+                "suggestDuration": "1天",
+                "tips": null,
+                "hotScore": null,
+                "spotStatus": null,
+                "viewCount": null,
+                "createTime": null
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "routeName": "云南秘境之旅",
+            "theme": "自然风光",
+            "coverUrl": null,
+            "summary": "从雪山到热带雨林",
+            "description": "丽江古城的悠闲、玉龙雪山的壮美、泸沽湖的神秘，云南给你一段难忘的旅程。",
+            "suggestDuration": "5-7天",
+            "suitableCrowd": "摄影爱好者/情侣",
+            "routeStatus": 1,
+            "createTime": "2026-06-16 09:16:50",
+            "scenicSpots": [
+              {
+                "id": 6,
+                "categoryId": null,
+                "categoryName": null,
+                "spotName": "丽江古城",
+                "city": "丽江",
+                "address": null,
+                "longitude": null,
+                "latitude": null,
+                "coverUrl": null,
+                "summary": "东方威尼斯，世界文化遗产",
+                "description": null,
+                "openTime": null,
+                "suggestDuration": "2-3天",
+                "tips": null,
+                "hotScore": null,
+                "spotStatus": null,
+                "viewCount": null,
+                "createTime": null
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "params": {
+          "theme": "自然风光",
+          "suitableCrowd": "情侣",
+          "limit": 3
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ROUTE_I18N_DETAIL",
+      "method": "GET",
+      "path": "/api/route/i18n/detail",
+      "url": "http://127.0.0.1:8137/api/route/i18n/detail",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": [
+          {
+            "id": 1,
+            "routeId": 1,
+            "languageCode": "en-US",
+            "title": "Beijing Cultural Deep Tour",
+            "summary": "Explore the cultural heritage of the ancient capital",
+            "description": "This route takes you deep into the cultural heart of Beijing.",
+            "travelTips": "Wear comfortable shoes. Book Forbidden City tickets in advance."
+          }
+        ]
+      },
+      "request": {
+        "params": {
+          "routeId": 1
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "USER_PROFILE",
+      "method": "GET",
+      "path": "/api/user/profile",
+      "url": "http://127.0.0.1:8137/api/user/profile",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "id": 2,
+          "username": "tourist",
+          "nickname": "游客_20260616_104550",
+          "avatarUrl": null,
+          "roleCode": "TOURIST",
+          "email": "tourist+api@test.com",
+          "phone": "13800009999",
+          "lastLoginTime": "2026-06-16 11:00:20",
+          "createTime": "2026-06-16 09:16:50"
+        }
+      },
+      "request": {
+        "params": null,
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "USER_UPDATE_PROFILE",
+      "method": "POST",
+      "path": "/api/user/update",
+      "url": "http://127.0.0.1:8137/api/user/update",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "nickname": "游客_20260616_110019",
+          "email": "tourist+api@test.com",
+          "phone": "13800009999"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "USER_CHANGE_PASSWORD",
+      "method": "POST",
+      "path": "/api/user/change-password",
+      "url": "http://127.0.0.1:8137/api/user/change-password",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "oldPassword": "123456",
+          "newPassword": "TempPass123!"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "AUTH_LOGIN_TOURIST_AFTER_CHANGE",
+      "method": "POST",
+      "path": "/api/auth/login",
+      "url": "http://127.0.0.1:8137/api/auth/login",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "id": 2,
+          "username": "tourist",
+          "nickname": "游客_20260616_110019",
+          "avatarUrl": null,
+          "roleCode": "TOURIST",
+          "email": "tourist+api@test.com",
+          "phone": "13800009999",
+          "lastLoginTime": "2026-06-16 11:00:20",
+          "createTime": "2026-06-16 09:16:50"
+        }
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "username": "tourist",
+          "password": "TempPass123!"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "USER_RESTORE_PASSWORD",
+      "method": "POST",
+      "path": "/api/user/change-password",
+      "url": "http://127.0.0.1:8137/api/user/change-password",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "oldPassword": "TempPass123!",
+          "newPassword": "123456"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "USER_PROFILE_AFTER_RESTORE",
+      "method": "GET",
+      "path": "/api/user/profile",
+      "url": "http://127.0.0.1:8137/api/user/profile",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "id": 2,
+          "username": "tourist",
+          "nickname": "游客_20260616_110019",
+          "avatarUrl": null,
+          "roleCode": "TOURIST",
+          "email": "tourist+api@test.com",
+          "phone": "13800009999",
+          "lastLoginTime": "2026-06-16 11:00:20",
+          "createTime": "2026-06-16 09:16:50"
+        }
+      },
+      "request": {
+        "params": null,
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "FAVORITE_CHECK_SCENIC",
+      "method": "GET",
+      "path": "/api/favorite/check",
+      "url": "http://127.0.0.1:8137/api/favorite/check",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": false
+      },
+      "request": {
+        "params": {
+          "bizType": "SCENIC",
+          "bizId": 2
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "FAVORITE_ADD_SCENIC",
+      "method": "POST",
+      "path": "/api/favorite/add",
+      "url": "http://127.0.0.1:8137/api/favorite/add",
+      "status": "FAIL",
+      "http_status": 200,
+      "response_code": 50000,
+      "response_message": "系统异常",
+      "response_body": {
+        "code": 50000,
+        "message": "系统异常",
+        "data": null
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "bizType": "SCENIC",
+          "bizId": 2
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "FAVORITE_PAGE",
+      "method": "GET",
+      "path": "/api/favorite/page",
+      "url": "http://127.0.0.1:8137/api/favorite/page",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "current": 1,
+          "pageSize": 10,
+          "total": 2,
+          "records": [
+            {
+              "id": 1,
+              "bizType": "SCENIC",
+              "bizId": 1,
+              "bizName": "故宫博物院",
+              "coverUrl": null,
+              "summary": "中国明清两代的皇家宫殿，世界上现存规模最大的宫殿型建筑",
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 2,
+              "bizType": "SCENIC",
+              "bizId": 3,
+              "bizName": "九寨沟",
+              "coverUrl": null,
+              "summary": "人间仙境，童话世界，世界自然遗产",
+              "createTime": "2026-06-16 09:16:50"
+            }
+          ]
+        }
+      },
+      "request": {
+        "params": {
+          "current": 1,
+          "pageSize": 10,
+          "bizType": "SCENIC"
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "FAVORITE_CANCEL_SCENIC",
+      "method": "POST",
+      "path": "/api/favorite/cancel",
+      "url": "http://127.0.0.1:8137/api/favorite/cancel",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "bizType": "SCENIC",
+          "bizId": 2
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "FAVORITE_CHECK_ROUTE",
+      "method": "GET",
+      "path": "/api/favorite/check",
+      "url": "http://127.0.0.1:8137/api/favorite/check",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": false
+      },
+      "request": {
+        "params": {
+          "bizType": "ROUTE",
+          "bizId": 1
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "FAVORITE_ADD_ROUTE",
+      "method": "POST",
+      "path": "/api/favorite/add",
+      "url": "http://127.0.0.1:8137/api/favorite/add",
+      "status": "FAIL",
+      "http_status": 200,
+      "response_code": 50000,
+      "response_message": "系统异常",
+      "response_body": {
+        "code": 50000,
+        "message": "系统异常",
+        "data": null
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "bizType": "ROUTE",
+          "bizId": 1
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "FAVORITE_CANCEL_ROUTE",
+      "method": "POST",
+      "path": "/api/favorite/cancel",
+      "url": "http://127.0.0.1:8137/api/favorite/cancel",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "bizType": "ROUTE",
+          "bizId": 1
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "FEEDBACK_CREATE",
+      "method": "POST",
+      "path": "/api/feedback/create",
+      "url": "http://127.0.0.1:8137/api/feedback/create",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": 5
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "feedbackType": "BUG",
+          "content": "接口自动化测试反馈 20260616_110019",
+          "contactInfo": "tourist+api@test.com"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "FEEDBACK_MY_PAGE",
+      "method": "GET",
+      "path": "/api/feedback/my/page",
+      "url": "http://127.0.0.1:8137/api/feedback/my/page",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "current": 1,
+          "pageSize": 10,
+          "total": 3,
+          "records": [
+            {
+              "id": 5,
+              "userId": 2,
+              "username": "tourist",
+              "feedbackType": "BUG",
+              "content": "接口自动化测试反馈 20260616_110019",
+              "contactInfo": "tourist+api@test.com",
+              "feedbackStatus": 0,
+              "replyContent": null,
+              "replyTime": null,
+              "createTime": "2026-06-16 11:00:20"
+            },
+            {
+              "id": 4,
+              "userId": 2,
+              "username": "tourist",
+              "feedbackType": "BUG",
+              "content": "接口自动化测试反馈 20260616_104550",
+              "contactInfo": "tourist+api@test.com",
+              "feedbackStatus": 1,
+              "replyContent": "收到，已记录并进入自动化回归验证。",
+              "replyTime": "2026-06-16 10:45:50",
+              "createTime": "2026-06-16 10:45:50"
+            },
+            {
+              "id": 1,
+              "userId": 2,
+              "username": "tourist",
+              "feedbackType": "SUGGESTION",
+              "content": "希望能增加更多英文讲解内容",
+              "contactInfo": "tourist@test.com",
+              "feedbackStatus": 1,
+              "replyContent": "感谢建议，我们正在持续完善多语种内容",
+              "replyTime": "2026-06-16 09:16:50",
+              "createTime": "2026-06-16 09:16:50"
+            }
+          ]
+        }
+      },
+      "request": {
+        "params": {
+          "current": 1,
+          "pageSize": 10
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_FEEDBACK_PAGE",
+      "method": "GET",
+      "path": "/api/admin/feedback/page",
+      "url": "http://127.0.0.1:8137/api/admin/feedback/page",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "current": 1,
+          "pageSize": 10,
+          "total": 5,
+          "records": [
+            {
+              "id": 5,
+              "userId": 2,
+              "username": "tourist",
+              "feedbackType": "BUG",
+              "content": "接口自动化测试反馈 20260616_110019",
+              "contactInfo": "tourist+api@test.com",
+              "feedbackStatus": 0,
+              "replyContent": null,
+              "replyTime": null,
+              "createTime": "2026-06-16 11:00:20"
+            },
+            {
+              "id": 4,
+              "userId": 2,
+              "username": "tourist",
+              "feedbackType": "BUG",
+              "content": "接口自动化测试反馈 20260616_104550",
+              "contactInfo": "tourist+api@test.com",
+              "feedbackStatus": 1,
+              "replyContent": "收到，已记录并进入自动化回归验证。",
+              "replyTime": "2026-06-16 10:45:50",
+              "createTime": "2026-06-16 10:45:50"
+            },
+            {
+              "id": 3,
+              "userId": 4,
+              "username": "lisi",
+              "feedbackType": "SUGGESTION",
+              "content": "希望增加语音导览功能",
+              "contactInfo": "zhangsan@test.com",
+              "feedbackStatus": 0,
+              "replyContent": null,
+              "replyTime": null,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 2,
+              "userId": 3,
+              "username": "zhangsan",
+              "feedbackType": "BUG",
+              "content": "景点详情页图片加载较慢",
+              "contactInfo": null,
+              "feedbackStatus": 0,
+              "replyContent": null,
+              "replyTime": null,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 1,
+              "userId": 2,
+              "username": "tourist",
+              "feedbackType": "SUGGESTION",
+              "content": "希望能增加更多英文讲解内容",
+              "contactInfo": "tourist@test.com",
+              "feedbackStatus": 1,
+              "replyContent": "感谢建议，我们正在持续完善多语种内容",
+              "replyTime": "2026-06-16 09:16:50",
+              "createTime": "2026-06-16 09:16:50"
+            }
+          ]
+        }
+      },
+      "request": {
+        "params": {
+          "current": 1,
+          "pageSize": 10
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_FEEDBACK_REPLY",
+      "method": "POST",
+      "path": "/api/admin/feedback/reply",
+      "url": "http://127.0.0.1:8137/api/admin/feedback/reply",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "id": 5,
+          "replyContent": "收到，已记录并进入自动化回归验证。",
+          "feedbackStatus": 1
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "AI_EXPLAIN_SCENIC",
+      "method": "POST",
+      "path": "/api/ai/guide/explain-scenic",
+      "url": "http://127.0.0.1:8137/api/ai/guide/explain-scenic",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "answer": "AI服务暂时不可用，请稍后重试。",
+          "languageCode": "zh-CN",
+          "costMillis": 12148
+        }
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "question": "请详细讲解这个景点的历史和看点",
+          "scenicSpotId": 1,
+          "routeId": 1,
+          "languageCode": "zh-CN"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "AI_COMPARE_SCENIC",
+      "method": "POST",
+      "path": "/api/ai/guide/compare-scenic",
+      "url": "http://127.0.0.1:8137/api/ai/guide/compare-scenic",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "answer": null,
+          "languageCode": "zh-CN",
+          "costMillis": 4602
+        }
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "scenicSpotIdA": 1,
+          "scenicSpotIdB": 2,
+          "languageCode": "zh-CN"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "AI_RECOMMEND_ROUTE",
+      "method": "POST",
+      "path": "/api/ai/guide/recommend-route",
+      "url": "http://127.0.0.1:8137/api/ai/guide/recommend-route",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "answer": null,
+          "languageCode": "zh-CN",
+          "costMillis": 2869
+        }
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "timeBudget": "1-2天",
+          "interest": "历史文化",
+          "crowd": "家庭",
+          "languageCode": "zh-CN"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "AI_COMMON_QUESTION",
+      "method": "POST",
+      "path": "/api/ai/guide/common-question",
+      "url": "http://127.0.0.1:8137/api/ai/guide/common-question",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "answer": null,
+          "languageCode": "zh-CN",
+          "costMillis": 3655
+        }
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "question": "请告诉我景点参观时有哪些注意事项",
+          "scenicSpotId": 1,
+          "languageCode": "zh-CN"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "AI_TRANSLATE_ANSWER",
+      "method": "POST",
+      "path": "/api/ai/guide/translate-answer",
+      "url": "http://127.0.0.1:8137/api/ai/guide/translate-answer",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "answer": null,
+          "languageCode": "en-US",
+          "costMillis": 2875
+        }
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "question": "Please translate this travel explanation into English.",
+          "scenicSpotId": 1,
+          "languageCode": "en-US"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "FILE_UPLOAD",
+      "method": "POST",
+      "path": "/api/file/upload",
+      "url": "http://127.0.0.1:8137/api/file/upload",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "id": 4,
+          "fileName": "api-test.png",
+          "fileUrl": "https://communityforum-backendd.oss-cn-hangzhou.aliyuncs.com/api_test/a69ade5553714b5099f8a3ac3d76aebd.png",
+          "fileType": "png",
+          "fileSize": 66,
+          "bizType": null,
+          "bizId": null,
+          "createTime": null
+        }
+      },
+      "request": {
+        "params": null,
+        "json": null,
+        "data": {
+          "bizType": "api_test"
+        },
+        "has_files": true,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_DASHBOARD",
+      "method": "GET",
+      "path": "/api/admin/statistics/dashboard",
+      "url": "http://127.0.0.1:8137/api/admin/statistics/dashboard",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "totalUsers": 6,
+          "totalScenicSpots": 10,
+          "totalRoutes": 6,
+          "totalFavorites": 6,
+          "totalFeedbacks": 5,
+          "pendingFeedbacks": 2,
+          "totalAiCalls": 15,
+          "todayAiCalls": 15,
+          "hotScenics": [
+            {
+              "id": 1,
+              "spotName": "故宫博物院",
+              "city": "北京",
+              "viewCount": 15683,
+              "hotScore": 999
+            },
+            {
+              "id": 2,
+              "spotName": "秦始皇兵马俑",
+              "city": "西安",
+              "viewCount": 12350,
+              "hotScore": 980
+            },
+            {
+              "id": 3,
+              "spotName": "九寨沟",
+              "city": "阿坝",
+              "viewCount": 9870,
+              "hotScore": 970
+            },
+            {
+              "id": 4,
+              "spotName": "黄山",
+              "city": "黄山",
+              "viewCount": 8540,
+              "hotScore": 960
+            },
+            {
+              "id": 5,
+              "spotName": "西湖",
+              "city": "杭州",
+              "viewCount": 11200,
+              "hotScore": 950
+            },
+            {
+              "id": 6,
+              "spotName": "丽江古城",
+              "city": "丽江",
+              "viewCount": 7650,
+              "hotScore": 940
+            },
+            {
+              "id": 7,
+              "spotName": "三亚亚龙湾",
+              "city": "三亚",
+              "viewCount": 6890,
+              "hotScore": 930
+            },
+            {
+              "id": 8,
+              "spotName": "上海迪士尼乐园",
+              "city": "上海",
+              "viewCount": 13500,
+              "hotScore": 920
+            },
+            {
+              "id": 9,
+              "spotName": "上海外滩",
+              "city": "上海",
+              "viewCount": 10200,
+              "hotScore": 910
+            },
+            {
+              "id": 10,
+              "spotName": "张家界国家森林公园",
+              "city": "张家界",
+              "viewCount": 7230,
+              "hotScore": 900
+            }
+          ]
+        }
+      },
+      "request": {
+        "params": null,
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_USER_PAGE",
+      "method": "GET",
+      "path": "/api/admin/user/page",
+      "url": "http://127.0.0.1:8137/api/admin/user/page",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "current": 1,
+          "pageSize": 10,
+          "total": 6,
+          "records": [
+            {
+              "id": 7,
+              "username": "api_test_user_002",
+              "nickname": "ApiTestUser002",
+              "avatarUrl": null,
+              "roleCode": "TOURIST",
+              "userStatus": 1,
+              "email": null,
+              "phone": null,
+              "lastLoginTime": null,
+              "createTime": "2026-06-16 10:45:50"
+            },
+            {
+              "id": 1,
+              "username": "admin",
+              "nickname": "管理员",
+              "avatarUrl": null,
+              "roleCode": "ADMIN",
+              "userStatus": 1,
+              "email": "admin@aiguide.com",
+              "phone": "13800000001",
+              "lastLoginTime": "2026-06-16 11:00:20",
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 2,
+              "username": "tourist",
+              "nickname": "游客_20260616_110019",
+              "avatarUrl": null,
+              "roleCode": "TOURIST",
+              "userStatus": 1,
+              "email": "tourist+api@test.com",
+              "phone": "13800009999",
+              "lastLoginTime": "2026-06-16 11:00:20",
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 3,
+              "username": "zhangsan",
+              "nickname": "张三",
+              "avatarUrl": null,
+              "roleCode": "TOURIST",
+              "userStatus": 1,
+              "email": "zhangsan@test.com",
+              "phone": "13800000003",
+              "lastLoginTime": null,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 4,
+              "username": "lisi",
+              "nickname": "李四",
+              "avatarUrl": null,
+              "roleCode": "TOURIST",
+              "userStatus": 1,
+              "email": "lisi@test.com",
+              "phone": "13800000004",
+              "lastLoginTime": null,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 5,
+              "username": "wangwu",
+              "nickname": "王五",
+              "avatarUrl": null,
+              "roleCode": "TOURIST",
+              "userStatus": 0,
+              "email": "wangwu@test.com",
+              "phone": "13800000005",
+              "lastLoginTime": null,
+              "createTime": "2026-06-16 09:16:50"
+            }
+          ]
+        }
+      },
+      "request": {
+        "params": {
+          "current": 1,
+          "pageSize": 10
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_USER_STATUS_DISABLE",
+      "method": "POST",
+      "path": "/api/admin/user/status",
+      "url": "http://127.0.0.1:8137/api/admin/user/status",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "id": 2,
+          "userStatus": 0
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_USER_STATUS_ENABLE",
+      "method": "POST",
+      "path": "/api/admin/user/status",
+      "url": "http://127.0.0.1:8137/api/admin/user/status",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "id": 2,
+          "userStatus": 1
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_CATEGORY_PAGE",
+      "method": "GET",
+      "path": "/api/admin/scenic/category/page",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/category/page",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "current": 1,
+          "pageSize": 20,
+          "total": 6,
+          "records": [
+            {
+              "id": 1,
+              "categoryName": "自然风光",
+              "categoryDesc": "山水、湖泊、森林等自然景观",
+              "sortNo": 1,
+              "categoryStatus": 1,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 2,
+              "categoryName": "历史人文",
+              "categoryDesc": "古迹、博物馆、文化遗址等",
+              "sortNo": 2,
+              "categoryStatus": 1,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 3,
+              "categoryName": "现代都市",
+              "categoryDesc": "城市地标、商业区、现代建筑",
+              "sortNo": 3,
+              "categoryStatus": 1,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 4,
+              "categoryName": "主题乐园",
+              "categoryDesc": "游乐园、动物园、水族馆等",
+              "sortNo": 4,
+              "categoryStatus": 1,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 5,
+              "categoryName": "古镇古村",
+              "categoryDesc": "传统村落、古镇、民俗村",
+              "sortNo": 5,
+              "categoryStatus": 1,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 6,
+              "categoryName": "海滨度假",
+              "categoryDesc": "海滩、海岛、海滨浴场",
+              "sortNo": 6,
+              "categoryStatus": 1,
+              "createTime": "2026-06-16 09:16:50"
+            }
+          ]
+        }
+      },
+      "request": {
+        "params": {
+          "current": 1,
+          "pageSize": 20
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_PAGE",
+      "method": "GET",
+      "path": "/api/admin/scenic/page",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/page",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "current": 1,
+          "pageSize": 20,
+          "total": 10,
+          "records": [
+            {
+              "id": 1,
+              "categoryId": 2,
+              "categoryName": "历史人文",
+              "spotName": "故宫博物院",
+              "city": "北京",
+              "address": "北京市东城区景山前街4号",
+              "longitude": 116.397228,
+              "latitude": 39.916527,
+              "coverUrl": null,
+              "summary": "中国明清两代的皇家宫殿，世界上现存规模最大的宫殿型建筑",
+              "description": "故宫博物院成立于1925年，是以明清两代皇宫和宫廷旧藏文物为基础建立的大型综合性博物馆。占地72万平方米，建筑面积约15万平方米，有大小宫殿七十多座，房屋九千余间。收藏有超过186万件文物，是世界上现存规模最大、保存最为完整的木质结构古建筑之一。",
+              "openTime": "08:30-17:00（周一闭馆）",
+              "suggestDuration": "3-4小时",
+              "tips": "建议提前网上预约购票，周一闭馆",
+              "hotScore": 999,
+              "spotStatus": 1,
+              "viewCount": 15683,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 2,
+              "categoryId": 2,
+              "categoryName": "历史人文",
+              "spotName": "秦始皇兵马俑",
+              "city": "西安",
+              "address": "陕西省西安市临潼区秦陵北路",
+              "longitude": 109.278751,
+              "latitude": 34.373682,
+              "coverUrl": null,
+              "summary": "世界第八大奇迹，中国第一位皇帝的地下军阵",
+              "description": "兵马俑博物馆是中国最大的古代军事博物馆，位于秦始皇陵东侧1.5公里处。已发掘三座兵马俑坑，面积2万多平方米，出土陶俑、陶马约8000件。每个陶俑的面容、发型、手势各不相同，堪称世界雕塑艺术的瑰宝。",
+              "openTime": "08:30-18:00",
+              "suggestDuration": "3-4小时",
+              "tips": "旺季建议提前3天预约",
+              "hotScore": 980,
+              "spotStatus": 1,
+              "viewCount": 12350,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 3,
+              "categoryId": 1,
+              "categoryName": "自然风光",
+              "spotName": "九寨沟",
+              "city": "阿坝",
+              "address": "四川省阿坝藏族羌族自治州九寨沟县",
+              "longitude": 103.917165,
+              "latitude": 33.263078,
+              "coverUrl": null,
+              "summary": "人间仙境，童话世界，世界自然遗产",
+              "description": "九寨沟以翠海、叠瀑、彩林、雪峰、藏情、蓝冰六绝著称于世。景区内有114个海子，17个瀑布群，11个溪流，5个钙化滩流。被誉为\"美丽的童话世界\"，1992年被列入世界自然遗产名录。",
+              "openTime": "全天开放",
+              "suggestDuration": "1-2天",
+              "tips": "海拔较高，注意高原反应；秋季最美",
+              "hotScore": 970,
+              "spotStatus": 1,
+              "viewCount": 9870,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 4,
+              "categoryId": 1,
+              "categoryName": "自然风光",
+              "spotName": "黄山",
+              "city": "黄山",
+              "address": "安徽省黄山市黄山区汤口镇",
+              "longitude": 118.168833,
+              "latitude": 30.137418,
+              "coverUrl": null,
+              "summary": "五岳归来不看山，黄山归来不看岳",
+              "description": "黄山集名山之长，有泰山之雄伟、华山之险峻、衡山之烟云、庐山之瀑布、雁荡之巧石、峨眉之秀丽。以奇松、怪石、云海、温泉\"四绝\"闻名于世。徐霞客曾赞叹：\"薄海内外无如徽之黄山，登黄山天下无山，观止矣！\"",
+              "openTime": "06:00-17:30",
+              "suggestDuration": "2天",
+              "tips": "建议住山上看日出日出；冬季注意防滑",
+              "hotScore": 960,
+              "spotStatus": 1,
+              "viewCount": 8540,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 5,
+              "categoryId": 2,
+              "categoryName": "历史人文",
+              "spotName": "西湖",
+              "city": "杭州",
+              "address": "浙江省杭州市西湖区龙井路1号",
+              "longitude": 120.148732,
+              "latitude": 30.242828,
+              "coverUrl": null,
+              "summary": "欲把西湖比西子，淡妆浓抹总相宜",
+              "description": "西湖位于杭州市区西面，南北长3.3公里，东西宽2.8公里，水面面积约5.66平方公里。环湖四周，绿荫环抱，山色葱茏，画桥烟柳，云树笼纱。西湖十景形成于南宋时期，苏堤春晓、曲院风荷、平湖秋月、断桥残雪等闻名遐迩。2011年列入世界文化遗产。",
+              "openTime": "全天开放",
+              "suggestDuration": "1天",
+              "tips": "免费开放，建议骑行环湖；夜游也很美",
+              "hotScore": 950,
+              "spotStatus": 1,
+              "viewCount": 11200,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 6,
+              "categoryId": 5,
+              "categoryName": "古镇古村",
+              "spotName": "丽江古城",
+              "city": "丽江",
+              "address": "云南省丽江市古城区",
+              "longitude": 100.227051,
+              "latitude": 26.872108,
+              "coverUrl": null,
+              "summary": "东方威尼斯，世界文化遗产",
+              "description": "丽江古城始建于宋末元初，已有800多年历史。古城依山傍水，以水为主，家家流水，户户垂杨。城内街道用五花石铺砌，既有山城风貌，又有水乡韵味。纳西古乐、东巴文化、白沙壁画等人文景观令人流连忘返。",
+              "openTime": "全天开放",
+              "suggestDuration": "2-3天",
+              "tips": "古城维护费50元；注意防晒",
+              "hotScore": 940,
+              "spotStatus": 1,
+              "viewCount": 7650,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 7,
+              "categoryId": 6,
+              "categoryName": "海滨度假",
+              "spotName": "三亚亚龙湾",
+              "city": "三亚",
+              "address": "海南省三亚市吉阳区亚龙湾",
+              "longitude": 109.639282,
+              "latitude": 18.191099,
+              "coverUrl": null,
+              "summary": "天下第一湾，东方夏威夷",
+              "description": "亚龙湾位于三亚市东南28公里处，是海南最南端的一个半月形海湾，全长约7.5公里。这里有蓝天、碧海、白沙、绿林，被誉为\"天下第一湾\"。海水清澈见底，能见度达7-9米，是理想的潜水胜地。",
+              "openTime": "全天开放",
+              "suggestDuration": "2-3天",
+              "tips": "冬季最佳；注意防晒和水上安全",
+              "hotScore": 930,
+              "spotStatus": 1,
+              "viewCount": 6890,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 8,
+              "categoryId": 4,
+              "categoryName": "主题乐园",
+              "spotName": "上海迪士尼乐园",
+              "city": "上海",
+              "address": "上海市浦东新区川沙镇",
+              "longitude": 121.667361,
+              "latitude": 31.143321,
+              "coverUrl": null,
+              "summary": "点亮心中奇梦",
+              "description": "上海迪士尼乐园是中国内地首座迪士尼主题乐园，于2016年6月16日开幕。拥有六大主题园区：米奇大街、奇想花园、探险岛、宝藏湾、梦幻世界和明日世界。拥有全球迪士尼主题乐园中最大城堡——奇幻童话城堡。",
+              "openTime": "08:30-20:30",
+              "suggestDuration": "1天",
+              "tips": "建议工作日前往；下载APP查看排队时间",
+              "hotScore": 920,
+              "spotStatus": 1,
+              "viewCount": 13500,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 9,
+              "categoryId": 3,
+              "categoryName": "现代都市",
+              "spotName": "上海外滩",
+              "city": "上海",
+              "address": "上海市黄浦区中山东一路",
+              "longitude": 121.493676,
+              "latitude": 31.230459,
+              "coverUrl": null,
+              "summary": "万国建筑博览群，上海标志性景观",
+              "description": "外滩位于上海市中心黄浦区的黄浦江畔，是最具上海城市象征意义的景观之一。全长1.5公里，东侧 facing 黄浦江，西侧为52幢风格各异的大楼，被称为\"万国建筑博览群\"。夜晚的外滩灯火辉煌，与对岸的陆家嘴摩天大楼群交相辉映。",
+              "openTime": "全天开放",
+              "suggestDuration": "1-2小时",
+              "tips": "夜景最美；建议傍晚前往",
+              "hotScore": 910,
+              "spotStatus": 1,
+              "viewCount": 10200,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 10,
+              "categoryId": 1,
+              "categoryName": "自然风光",
+              "spotName": "张家界国家森林公园",
+              "city": "张家界",
+              "address": "湖南省张家界市武陵源区",
+              "longitude": 110.479796,
+              "latitude": 29.326168,
+              "coverUrl": null,
+              "summary": "缩小的仙境，放大的盆景",
+              "description": "张家界国家森林公园是中国第一个国家森林公园，以峰称奇、以谷显幽、以林见秀。三千座石峰拔地而起，八百条溪流蜿蜒曲折。电影《阿凡达》中的悬浮山就是以这里的南天一柱（哈利路亚山）为原型。",
+              "openTime": "07:00-18:00",
+              "suggestDuration": "2-3天",
+              "tips": "山路较多，穿舒适运动鞋；雨季注意防滑",
+              "hotScore": 900,
+              "spotStatus": 1,
+              "viewCount": 7230,
+              "createTime": "2026-06-16 09:16:50"
+            }
+          ]
+        }
+      },
+      "request": {
+        "params": {
+          "current": 1,
+          "pageSize": 20
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_DETAIL",
+      "method": "GET",
+      "path": "/api/admin/scenic/detail",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/detail",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "id": 1,
+          "categoryId": 2,
+          "categoryName": "历史人文",
+          "spotName": "故宫博物院",
+          "city": "北京",
+          "address": "北京市东城区景山前街4号",
+          "longitude": 116.397228,
+          "latitude": 39.916527,
+          "coverUrl": null,
+          "summary": "中国明清两代的皇家宫殿，世界上现存规模最大的宫殿型建筑",
+          "description": "故宫博物院成立于1925年，是以明清两代皇宫和宫廷旧藏文物为基础建立的大型综合性博物馆。占地72万平方米，建筑面积约15万平方米，有大小宫殿七十多座，房屋九千余间。收藏有超过186万件文物，是世界上现存规模最大、保存最为完整的木质结构古建筑之一。",
+          "openTime": "08:30-17:00（周一闭馆）",
+          "suggestDuration": "3-4小时",
+          "tips": "建议提前网上预约购票，周一闭馆",
+          "hotScore": 999,
+          "spotStatus": 1,
+          "viewCount": 15683,
+          "createTime": "2026-06-16 09:16:50"
+        }
+      },
+      "request": {
+        "params": {
+          "id": 1
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_I18N_LIST",
+      "method": "GET",
+      "path": "/api/admin/scenic/i18n/list",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/i18n/list",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": [
+          {
+            "id": 1,
+            "scenicSpotId": 1,
+            "languageCode": "en-US",
+            "title": "The Forbidden City",
+            "summary": "The imperial palace of Chinese emperors",
+            "description": "The Forbidden City, located in the center of Beijing, was the Chinese imperial palace from the Ming dynasty to the end of the Qing dynasty. It is now home to the Palace Museum.",
+            "tips": "Advance booking recommended. Closed on Mondays."
+          },
+          {
+            "id": 2,
+            "scenicSpotId": 1,
+            "languageCode": "ja-JP",
+            "title": "故宮博物院",
+            "summary": "中国明清時代の皇宮",
+            "description": "故宮博物院は、明・清時代の皇帝の宮殿を基に設立された博物館です。72万平方メートルの敷地に9000以上の部屋があります。",
+            "tips": "事前予約が必要です。月曜日は休館です。"
+          }
+        ]
+      },
+      "request": {
+        "params": {
+          "scenicSpotId": 1
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_MEDIA_LIST",
+      "method": "GET",
+      "path": "/api/admin/scenic/media/list",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/media/list",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": [
+          {
+            "id": 1,
+            "scenicSpotId": 1,
+            "mediaType": "image",
+            "mediaUrl": "https://communityforum-backendd.oss-cn-hangzhou.aliyuncs.com/scenic/forbidden-city-1.jpg",
+            "mediaName": "故宫全景",
+            "sortNo": 1
+          },
+          {
+            "id": 2,
+            "scenicSpotId": 1,
+            "mediaType": "image",
+            "mediaUrl": "https://communityforum-backendd.oss-cn-hangzhou.aliyuncs.com/scenic/forbidden-city-2.jpg",
+            "mediaName": "太和殿",
+            "sortNo": 2
+          }
+        ]
+      },
+      "request": {
+        "params": {
+          "scenicSpotId": 1
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_ROUTE_PAGE",
+      "method": "GET",
+      "path": "/api/admin/route/page",
+      "url": "http://127.0.0.1:8137/api/admin/route/page",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "current": 1,
+          "pageSize": 20,
+          "total": 6,
+          "records": [
+            {
+              "id": 1,
+              "routeName": "北京文化深度游",
+              "theme": "历史文化",
+              "coverUrl": null,
+              "summary": "探索千年古都的文化底蕴",
+              "description": "这条路线将带你深入北京的历史文化核心，从皇家宫殿到现代艺术，感受这座城市的历史与现代交融之美。",
+              "suggestDuration": "2天",
+              "suitableCrowd": "文化爱好者/家庭",
+              "routeStatus": 1,
+              "createTime": "2026-06-16 09:16:50",
+              "scenicSpots": [
+                {
+                  "id": 1,
+                  "categoryId": null,
+                  "categoryName": null,
+                  "spotName": "故宫博物院",
+                  "city": "北京",
+                  "address": null,
+                  "longitude": null,
+                  "latitude": null,
+                  "coverUrl": null,
+                  "summary": "中国明清两代的皇家宫殿，世界上现存规模最大的宫殿型建筑",
+                  "description": null,
+                  "openTime": null,
+                  "suggestDuration": "3-4小时",
+                  "tips": null,
+                  "hotScore": null,
+                  "spotStatus": null,
+                  "viewCount": null,
+                  "createTime": null
+                },
+                {
+                  "id": 9,
+                  "categoryId": null,
+                  "categoryName": null,
+                  "spotName": "上海外滩",
+                  "city": "上海",
+                  "address": null,
+                  "longitude": null,
+                  "latitude": null,
+                  "coverUrl": null,
+                  "summary": "万国建筑博览群，上海标志性景观",
+                  "description": null,
+                  "openTime": null,
+                  "suggestDuration": "1-2小时",
+                  "tips": null,
+                  "hotScore": null,
+                  "spotStatus": null,
+                  "viewCount": null,
+                  "createTime": null
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "routeName": "西安古都探秘",
+              "theme": "历史文化",
+              "coverUrl": null,
+              "summary": "穿越千年，梦回大唐",
+              "description": "西安，十三朝古都，丝绸之路的起点。这条路线将带你领略兵马俑的壮观、古城墙的雄伟、回民街的美食。",
+              "suggestDuration": "2天",
+              "suitableCrowd": "历史爱好者/亲子",
+              "routeStatus": 1,
+              "createTime": "2026-06-16 09:16:50",
+              "scenicSpots": [
+                {
+                  "id": 2,
+                  "categoryId": null,
+                  "categoryName": null,
+                  "spotName": "秦始皇兵马俑",
+                  "city": "西安",
+                  "address": null,
+                  "longitude": null,
+                  "latitude": null,
+                  "coverUrl": null,
+                  "summary": "世界第八大奇迹，中国第一位皇帝的地下军阵",
+                  "description": null,
+                  "openTime": null,
+                  "suggestDuration": "3-4小时",
+                  "tips": null,
+                  "hotScore": null,
+                  "spotStatus": null,
+                  "viewCount": null,
+                  "createTime": null
+                }
+              ]
+            },
+            {
+              "id": 3,
+              "routeName": "杭州诗意之旅",
+              "theme": "自然风光",
+              "coverUrl": null,
+              "summary": "上有天堂，下有苏杭",
+              "description": "漫步西湖边，品味龙井茶，感受杭州的诗意与浪漫。这条路线适合慢慢走、慢慢看。",
+              "suggestDuration": "1-2天",
+              "suitableCrowd": "情侣/文艺青年",
+              "routeStatus": 1,
+              "createTime": "2026-06-16 09:16:50",
+              "scenicSpots": [
+                {
+                  "id": 5,
+                  "categoryId": null,
+                  "categoryName": null,
+                  "spotName": "西湖",
+                  "city": "杭州",
+                  "address": null,
+                  "longitude": null,
+                  "latitude": null,
+                  "coverUrl": null,
+                  "summary": "欲把西湖比西子，淡妆浓抹总相宜",
+                  "description": null,
+                  "openTime": null,
+                  "suggestDuration": "1天",
+                  "tips": null,
+                  "hotScore": null,
+                  "spotStatus": null,
+                  "viewCount": null,
+                  "createTime": null
+                }
+              ]
+            },
+            {
+              "id": 4,
+              "routeName": "云南秘境之旅",
+              "theme": "自然风光",
+              "coverUrl": null,
+              "summary": "从雪山到热带雨林",
+              "description": "丽江古城的悠闲、玉龙雪山的壮美、泸沽湖的神秘，云南给你一段难忘的旅程。",
+              "suggestDuration": "5-7天",
+              "suitableCrowd": "摄影爱好者/情侣",
+              "routeStatus": 1,
+              "createTime": "2026-06-16 09:16:50",
+              "scenicSpots": [
+                {
+                  "id": 6,
+                  "categoryId": null,
+                  "categoryName": null,
+                  "spotName": "丽江古城",
+                  "city": "丽江",
+                  "address": null,
+                  "longitude": null,
+                  "latitude": null,
+                  "coverUrl": null,
+                  "summary": "东方威尼斯，世界文化遗产",
+                  "description": null,
+                  "openTime": null,
+                  "suggestDuration": "2-3天",
+                  "tips": null,
+                  "hotScore": null,
+                  "spotStatus": null,
+                  "viewCount": null,
+                  "createTime": null
+                }
+              ]
+            },
+            {
+              "id": 5,
+              "routeName": "上海摩登都市",
+              "theme": "现代都市",
+              "coverUrl": null,
+              "summary": "东方明珠的璀璨夜色",
+              "description": "外滩的万国建筑、陆家嘴的摩天大楼、迪士尼的童话世界，感受上海的摩登魅力。",
+              "suggestDuration": "2-3天",
+              "suitableCrowd": "都市探索者/亲子",
+              "routeStatus": 1,
+              "createTime": "2026-06-16 09:16:50",
+              "scenicSpots": [
+                {
+                  "id": 8,
+                  "categoryId": null,
+                  "categoryName": null,
+                  "spotName": "上海迪士尼乐园",
+                  "city": "上海",
+                  "address": null,
+                  "longitude": null,
+                  "latitude": null,
+                  "coverUrl": null,
+                  "summary": "点亮心中奇梦",
+                  "description": null,
+                  "openTime": null,
+                  "suggestDuration": "1天",
+                  "tips": null,
+                  "hotScore": null,
+                  "spotStatus": null,
+                  "viewCount": null,
+                  "createTime": null
+                },
+                {
+                  "id": 9,
+                  "categoryId": null,
+                  "categoryName": null,
+                  "spotName": "上海外滩",
+                  "city": "上海",
+                  "address": null,
+                  "longitude": null,
+                  "latitude": null,
+                  "coverUrl": null,
+                  "summary": "万国建筑博览群，上海标志性景观",
+                  "description": null,
+                  "openTime": null,
+                  "suggestDuration": "1-2小时",
+                  "tips": null,
+                  "hotScore": null,
+                  "spotStatus": null,
+                  "viewCount": null,
+                  "createTime": null
+                }
+              ]
+            },
+            {
+              "id": 6,
+              "routeName": "海南阳光海滩",
+              "theme": "海滨度假",
+              "coverUrl": null,
+              "summary": "椰风海韵，阳光沙滩",
+              "description": "亚龙湾的碧海蓝天、蜈支洲岛的潜水天堂、南山寺的佛教文化，享受海南的热带风情。",
+              "suggestDuration": "4-5天",
+              "suitableCrowd": "度假休闲/家庭",
+              "routeStatus": 1,
+              "createTime": "2026-06-16 09:16:50",
+              "scenicSpots": [
+                {
+                  "id": 7,
+                  "categoryId": null,
+                  "categoryName": null,
+                  "spotName": "三亚亚龙湾",
+                  "city": "三亚",
+                  "address": null,
+                  "longitude": null,
+                  "latitude": null,
+                  "coverUrl": null,
+                  "summary": "天下第一湾，东方夏威夷",
+                  "description": null,
+                  "openTime": null,
+                  "suggestDuration": "2-3天",
+                  "tips": null,
+                  "hotScore": null,
+                  "spotStatus": null,
+                  "viewCount": null,
+                  "createTime": null
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "request": {
+        "params": {
+          "current": 1,
+          "pageSize": 20
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_ROUTE_DETAIL",
+      "method": "GET",
+      "path": "/api/admin/route/detail",
+      "url": "http://127.0.0.1:8137/api/admin/route/detail",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "id": 1,
+          "routeName": "北京文化深度游",
+          "theme": "历史文化",
+          "coverUrl": null,
+          "summary": "探索千年古都的文化底蕴",
+          "description": "这条路线将带你深入北京的历史文化核心，从皇家宫殿到现代艺术，感受这座城市的历史与现代交融之美。",
+          "suggestDuration": "2天",
+          "suitableCrowd": "文化爱好者/家庭",
+          "routeStatus": 1,
+          "createTime": "2026-06-16 09:16:50",
+          "scenicSpots": [
+            {
+              "id": 1,
+              "categoryId": null,
+              "categoryName": null,
+              "spotName": "故宫博物院",
+              "city": "北京",
+              "address": null,
+              "longitude": null,
+              "latitude": null,
+              "coverUrl": null,
+              "summary": "中国明清两代的皇家宫殿，世界上现存规模最大的宫殿型建筑",
+              "description": null,
+              "openTime": null,
+              "suggestDuration": "3-4小时",
+              "tips": null,
+              "hotScore": null,
+              "spotStatus": null,
+              "viewCount": null,
+              "createTime": null
+            },
+            {
+              "id": 9,
+              "categoryId": null,
+              "categoryName": null,
+              "spotName": "上海外滩",
+              "city": "上海",
+              "address": null,
+              "longitude": null,
+              "latitude": null,
+              "coverUrl": null,
+              "summary": "万国建筑博览群，上海标志性景观",
+              "description": null,
+              "openTime": null,
+              "suggestDuration": "1-2小时",
+              "tips": null,
+              "hotScore": null,
+              "spotStatus": null,
+              "viewCount": null,
+              "createTime": null
+            }
+          ]
+        }
+      },
+      "request": {
+        "params": {
+          "id": 1
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_ROUTE_I18N_LIST",
+      "method": "GET",
+      "path": "/api/admin/route/i18n/list",
+      "url": "http://127.0.0.1:8137/api/admin/route/i18n/list",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": [
+          {
+            "id": 1,
+            "routeId": 1,
+            "languageCode": "en-US",
+            "title": "Beijing Cultural Deep Tour",
+            "summary": "Explore the cultural heritage of the ancient capital",
+            "description": "This route takes you deep into the cultural heart of Beijing.",
+            "travelTips": "Wear comfortable shoes. Book Forbidden City tickets in advance."
+          }
+        ]
+      },
+      "request": {
+        "params": {
+          "routeId": 1
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_FEEDBACK_PAGE_AGAIN",
+      "method": "GET",
+      "path": "/api/admin/feedback/page",
+      "url": "http://127.0.0.1:8137/api/admin/feedback/page",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "current": 1,
+          "pageSize": 20,
+          "total": 5,
+          "records": [
+            {
+              "id": 5,
+              "userId": 2,
+              "username": "tourist",
+              "feedbackType": "BUG",
+              "content": "接口自动化测试反馈 20260616_110019",
+              "contactInfo": "tourist+api@test.com",
+              "feedbackStatus": 1,
+              "replyContent": "收到，已记录并进入自动化回归验证。",
+              "replyTime": "2026-06-16 11:00:20",
+              "createTime": "2026-06-16 11:00:20"
+            },
+            {
+              "id": 4,
+              "userId": 2,
+              "username": "tourist",
+              "feedbackType": "BUG",
+              "content": "接口自动化测试反馈 20260616_104550",
+              "contactInfo": "tourist+api@test.com",
+              "feedbackStatus": 1,
+              "replyContent": "收到，已记录并进入自动化回归验证。",
+              "replyTime": "2026-06-16 10:45:50",
+              "createTime": "2026-06-16 10:45:50"
+            },
+            {
+              "id": 3,
+              "userId": 4,
+              "username": "lisi",
+              "feedbackType": "SUGGESTION",
+              "content": "希望增加语音导览功能",
+              "contactInfo": "zhangsan@test.com",
+              "feedbackStatus": 0,
+              "replyContent": null,
+              "replyTime": null,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 2,
+              "userId": 3,
+              "username": "zhangsan",
+              "feedbackType": "BUG",
+              "content": "景点详情页图片加载较慢",
+              "contactInfo": null,
+              "feedbackStatus": 0,
+              "replyContent": null,
+              "replyTime": null,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 1,
+              "userId": 2,
+              "username": "tourist",
+              "feedbackType": "SUGGESTION",
+              "content": "希望能增加更多英文讲解内容",
+              "contactInfo": "tourist@test.com",
+              "feedbackStatus": 1,
+              "replyContent": "感谢建议，我们正在持续完善多语种内容",
+              "replyTime": "2026-06-16 09:16:50",
+              "createTime": "2026-06-16 09:16:50"
+            }
+          ]
+        }
+      },
+      "request": {
+        "params": {
+          "current": 1,
+          "pageSize": 20
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_AI_LOG_PAGE",
+      "method": "GET",
+      "path": "/api/admin/ai/log/page",
+      "url": "http://127.0.0.1:8137/api/admin/ai/log/page",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "current": 1,
+          "pageSize": 20,
+          "total": 15,
+          "records": [
+            {
+              "id": 15,
+              "userId": 2,
+              "username": "tourist",
+              "modelName": "MiniMax-M2.7",
+              "bizType": "TRANSLATE",
+              "languageCode": "en-US",
+              "scenicSpotId": 1,
+              "routeId": null,
+              "requestSummary": "Please translate this travel explanation into English.",
+              "responseSummary": null,
+              "successFlag": 1,
+              "costMillis": 2875,
+              "errorMessage": null,
+              "createTime": "2026-06-16 11:00:46"
+            },
+            {
+              "id": 14,
+              "userId": 2,
+              "username": "tourist",
+              "modelName": "MiniMax-M2.7",
+              "bizType": "QUESTION",
+              "languageCode": "zh-CN",
+              "scenicSpotId": 1,
+              "routeId": null,
+              "requestSummary": "请告诉我景点参观时有哪些注意事项",
+              "responseSummary": null,
+              "successFlag": 1,
+              "costMillis": 3655,
+              "errorMessage": null,
+              "createTime": "2026-06-16 11:00:43"
+            },
+            {
+              "id": 13,
+              "userId": 2,
+              "username": "tourist",
+              "modelName": "MiniMax-M2.7",
+              "bizType": "RECOMMEND",
+              "languageCode": "zh-CN",
+              "scenicSpotId": null,
+              "routeId": null,
+              "requestSummary": "路线推荐",
+              "responseSummary": null,
+              "successFlag": 1,
+              "costMillis": 2869,
+              "errorMessage": null,
+              "createTime": "2026-06-16 11:00:40"
+            },
+            {
+              "id": 12,
+              "userId": 2,
+              "username": "tourist",
+              "modelName": "MiniMax-M2.7",
+              "bizType": "COMPARE",
+              "languageCode": "zh-CN",
+              "scenicSpotId": null,
+              "routeId": null,
+              "requestSummary": "对比故宫博物院和秦始皇兵马俑",
+              "responseSummary": null,
+              "successFlag": 1,
+              "costMillis": 4602,
+              "errorMessage": null,
+              "createTime": "2026-06-16 11:00:37"
+            },
+            {
+              "id": 11,
+              "userId": 2,
+              "username": "tourist",
+              "modelName": "MiniMax-M2.7",
+              "bizType": "EXPLAIN",
+              "languageCode": "zh-CN",
+              "scenicSpotId": 1,
+              "routeId": null,
+              "requestSummary": "请详细讲解这个景点的历史和看点",
+              "responseSummary": "AI服务暂时不可用，请稍后重试。",
+              "successFlag": 1,
+              "costMillis": 12148,
+              "errorMessage": null,
+              "createTime": "2026-06-16 11:00:32"
+            },
+            {
+              "id": 10,
+              "userId": 2,
+              "username": "tourist",
+              "modelName": "MiniMax-M2.7",
+              "bizType": "EXPLAIN",
+              "languageCode": "zh-CN",
+              "scenicSpotId": 1,
+              "routeId": null,
+              "requestSummary": "请详细讲解这个景点的历史和看点",
+              "responseSummary": "AI服务暂时不可用，请稍后重试。",
+              "successFlag": 1,
+              "costMillis": 12420,
+              "errorMessage": null,
+              "createTime": "2026-06-16 11:00:03"
+            },
+            {
+              "id": 9,
+              "userId": 2,
+              "username": "tourist",
+              "modelName": "MiniMax-M2.7",
+              "bizType": "EXPLAIN",
+              "languageCode": "zh-CN",
+              "scenicSpotId": 1,
+              "routeId": null,
+              "requestSummary": "请详细讲解这个景点的历史和看点",
+              "responseSummary": null,
+              "successFlag": 1,
+              "costMillis": 37711,
+              "errorMessage": null,
+              "createTime": "2026-06-16 10:46:28"
+            },
+            {
+              "id": 8,
+              "userId": 2,
+              "username": "tourist",
+              "modelName": "MiniMax-M2.7",
+              "bizType": "TRANSLATE",
+              "languageCode": "en-US",
+              "scenicSpotId": 1,
+              "routeId": null,
+              "requestSummary": "Please translate this travel explanation into English.",
+              "responseSummary": null,
+              "successFlag": 1,
+              "costMillis": 2550,
+              "errorMessage": null,
+              "createTime": "2026-06-16 10:46:20"
+            },
+            {
+              "id": 7,
+              "userId": 2,
+              "username": "tourist",
+              "modelName": "MiniMax-M2.7",
+              "bizType": "QUESTION",
+              "languageCode": "zh-CN",
+              "scenicSpotId": 1,
+              "routeId": null,
+              "requestSummary": "请告诉我景点参观时有哪些注意事项",
+              "responseSummary": null,
+              "successFlag": 1,
+              "costMillis": 4464,
+              "errorMessage": null,
+              "createTime": "2026-06-16 10:46:17"
+            },
+            {
+              "id": 6,
+              "userId": 2,
+              "username": "tourist",
+              "modelName": "MiniMax-M2.7",
+              "bizType": "RECOMMEND",
+              "languageCode": "zh-CN",
+              "scenicSpotId": null,
+              "routeId": null,
+              "requestSummary": "路线推荐",
+              "responseSummary": null,
+              "successFlag": 1,
+              "costMillis": 2765,
+              "errorMessage": null,
+              "createTime": "2026-06-16 10:46:13"
+            },
+            {
+              "id": 5,
+              "userId": 2,
+              "username": "tourist",
+              "modelName": "MiniMax-M2.7",
+              "bizType": "COMPARE",
+              "languageCode": "zh-CN",
+              "scenicSpotId": null,
+              "routeId": null,
+              "requestSummary": "对比故宫博物院和秦始皇兵马俑",
+              "responseSummary": null,
+              "successFlag": 1,
+              "costMillis": 4704,
+              "errorMessage": null,
+              "createTime": "2026-06-16 10:46:10"
+            },
+            {
+              "id": 1,
+              "userId": 2,
+              "username": "tourist",
+              "modelName": "MiniMax-M2.7",
+              "bizType": "EXPLAIN",
+              "languageCode": "zh-CN",
+              "scenicSpotId": 1,
+              "routeId": null,
+              "requestSummary": "请讲解故宫的历史",
+              "responseSummary": "故宫博物院成立于1925年...",
+              "successFlag": 1,
+              "costMillis": 2350,
+              "errorMessage": null,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 2,
+              "userId": 2,
+              "username": "tourist",
+              "modelName": "MiniMax-M2.7",
+              "bizType": "QUESTION",
+              "languageCode": "en-US",
+              "scenicSpotId": 1,
+              "routeId": null,
+              "requestSummary": "What is the history of the Forbidden City?",
+              "responseSummary": "The Forbidden City was built...",
+              "successFlag": 1,
+              "costMillis": 1890,
+              "errorMessage": null,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 3,
+              "userId": 3,
+              "username": "zhangsan",
+              "modelName": "MiniMax-M2.7",
+              "bizType": "RECOMMEND",
+              "languageCode": "zh-CN",
+              "scenicSpotId": null,
+              "routeId": null,
+              "requestSummary": "推荐杭州一日游路线",
+              "responseSummary": "建议您从西湖开始...",
+              "successFlag": 1,
+              "costMillis": 3200,
+              "errorMessage": null,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 4,
+              "userId": 4,
+              "username": "lisi",
+              "modelName": "MiniMax-M2.7",
+              "bizType": "COMPARE",
+              "languageCode": "zh-CN",
+              "scenicSpotId": null,
+              "routeId": null,
+              "requestSummary": "对比故宫和兵马俑",
+              "responseSummary": "故宫和兵马俑都是...",
+              "successFlag": 1,
+              "costMillis": 2780,
+              "errorMessage": null,
+              "createTime": "2026-06-16 09:16:50"
+            }
+          ]
+        }
+      },
+      "request": {
+        "params": {
+          "current": 1,
+          "pageSize": 20
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_FILE_PAGE",
+      "method": "GET",
+      "path": "/api/admin/file/page",
+      "url": "http://127.0.0.1:8137/api/admin/file/page",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "current": 1,
+          "pageSize": 20,
+          "total": 4,
+          "records": [
+            {
+              "id": 4,
+              "fileName": "api-test.png",
+              "fileUrl": "https://communityforum-backendd.oss-cn-hangzhou.aliyuncs.com/api_test/a69ade5553714b5099f8a3ac3d76aebd.png",
+              "fileType": "png",
+              "fileSize": 66,
+              "bizType": "api_test",
+              "bizId": null,
+              "createTime": "2026-06-16 11:00:47"
+            },
+            {
+              "id": 3,
+              "fileName": "api-test.png",
+              "fileUrl": "https://communityforum-backendd.oss-cn-hangzhou.aliyuncs.com/api_test/b123b8aecfc8487785321a261562be26.png",
+              "fileType": "png",
+              "fileSize": 66,
+              "bizType": "api_test",
+              "bizId": null,
+              "createTime": "2026-06-16 10:46:20"
+            },
+            {
+              "id": 1,
+              "fileName": "forbidden-city.jpg",
+              "fileUrl": "https://communityforum-backendd.oss-cn-hangzhou.aliyuncs.com/scenic/forbidden-city-1.jpg",
+              "fileType": "jpg",
+              "fileSize": 256000,
+              "bizType": "scenic",
+              "bizId": 1,
+              "createTime": "2026-06-16 09:16:50"
+            },
+            {
+              "id": 2,
+              "fileName": "avatar.jpg",
+              "fileUrl": "https://communityforum-backendd.oss-cn-hangzhou.aliyuncs.com/user_avatar/tourist.jpg",
+              "fileType": "jpg",
+              "fileSize": 32000,
+              "bizType": "user_avatar",
+              "bizId": 2,
+              "createTime": "2026-06-16 09:16:50"
+            }
+          ]
+        }
+      },
+      "request": {
+        "params": {
+          "current": 1,
+          "pageSize": 20
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_CATEGORY_SAVE_CREATE",
+      "method": "POST",
+      "path": "/api/admin/scenic/category/save",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/category/save",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": 8
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "categoryName": "测试分类-20260616_110047",
+          "categoryDesc": "仅用于自动化测试",
+          "sortNo": 99
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_SAVE_CREATE",
+      "method": "POST",
+      "path": "/api/admin/scenic/save",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/save",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": 12
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "categoryId": 8,
+          "spotName": "测试景点-20260616_110047",
+          "city": "杭州",
+          "address": "浙江省杭州市西湖区测试路 1 号",
+          "longitude": 120.12,
+          "latitude": 30.28,
+          "coverUrl": "https://example.com/test-cover.jpg",
+          "summary": "用于自动化测试的景点摘要",
+          "description": "这是自动化测试脚本创建的景点。",
+          "openTime": "全天开放",
+          "suggestDuration": "2小时",
+          "tips": "仅用于接口测试"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_ROUTE_SAVE_CREATE",
+      "method": "POST",
+      "path": "/api/admin/route/save",
+      "url": "http://127.0.0.1:8137/api/admin/route/save",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": 8
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "routeName": "测试路线-20260616_110047",
+          "theme": "历史文化",
+          "coverUrl": "https://example.com/route-cover.jpg",
+          "summary": "用于自动化测试的路线摘要",
+          "description": "这是自动化测试脚本创建的路线。",
+          "suggestDuration": "1天",
+          "suitableCrowd": "家庭",
+          "spots": [
+            {
+              "scenicSpotId": 1,
+              "sortNo": 1,
+              "stayDuration": "2小时"
+            },
+            {
+              "scenicSpotId": 2,
+              "sortNo": 2,
+              "stayDuration": "2小时"
+            }
+          ]
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_CATEGORY_SAVE_UPDATE",
+      "method": "POST",
+      "path": "/api/admin/scenic/category/save",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/category/save",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": 8
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "id": 8,
+          "categoryName": "测试分类更新-20260616_110047",
+          "categoryDesc": "自动化测试更新后的分类描述",
+          "sortNo": 99
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_CATEGORY_STATUS",
+      "method": "POST",
+      "path": "/api/admin/scenic/category/status",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/category/status",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "id": 8,
+          "categoryStatus": 0
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_CATEGORY_STATUS_RESTORE",
+      "method": "POST",
+      "path": "/api/admin/scenic/category/status",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/category/status",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "id": 8,
+          "categoryStatus": 1
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_CATEGORY_DELETE",
+      "method": "POST",
+      "path": "/api/admin/scenic/category/delete",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/category/delete",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "id": 8
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_SAVE_UPDATE",
+      "method": "POST",
+      "path": "/api/admin/scenic/save",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/save",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": 12
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "id": 12,
+          "categoryId": 1,
+          "spotName": "测试景点更新-20260616_110047",
+          "city": "杭州",
+          "address": "浙江省杭州市西湖区测试路 1 号",
+          "longitude": 120.12,
+          "latitude": 30.28,
+          "coverUrl": "https://example.com/test-cover.jpg",
+          "summary": "更新后的测试景点摘要",
+          "description": "这是自动化测试脚本创建并更新的景点。",
+          "openTime": "全天开放",
+          "suggestDuration": "2小时",
+          "tips": "仅用于接口测试"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_STATUS",
+      "method": "POST",
+      "path": "/api/admin/scenic/status",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/status",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": {
+          "id": 12,
+          "status": 0
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_STATUS_RESTORE",
+      "method": "POST",
+      "path": "/api/admin/scenic/status",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/status",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": {
+          "id": 12,
+          "status": 1
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_I18N_SAVE_CREATE",
+      "method": "POST",
+      "path": "/api/admin/scenic/i18n/save",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/i18n/save",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": 7
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "scenicSpotId": 12,
+          "languageCode": "fr-FR",
+          "title": "Test Scenic Spot",
+          "summary": "Created by API smoke test",
+          "description": "Temporary multilingual entry for testing.",
+          "tips": "Temporary record"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_I18N_SAVE_UPDATE",
+      "method": "POST",
+      "path": "/api/admin/scenic/i18n/save",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/i18n/save",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": 7
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "id": 7,
+          "scenicSpotId": 12,
+          "languageCode": "fr-FR",
+          "title": "Test Scenic Spot Updated",
+          "summary": "Updated multilingual entry",
+          "description": "Updated temporary multilingual entry.",
+          "tips": "Still temporary"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_MEDIA_ADD",
+      "method": "POST",
+      "path": "/api/admin/scenic/media/add",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/media/add",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": 7
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "scenicSpotId": 12,
+          "mediaType": "image",
+          "mediaUrl": "https://example.com/test-media.jpg",
+          "mediaName": "test-media"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_MEDIA_DELETE",
+      "method": "POST",
+      "path": "/api/admin/scenic/media/delete",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/media/delete",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "id": 7
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_I18N_LIST_AFTER_CREATE",
+      "method": "GET",
+      "path": "/api/admin/scenic/i18n/list",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/i18n/list",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": [
+          {
+            "id": 7,
+            "scenicSpotId": 12,
+            "languageCode": "fr-FR",
+            "title": "Test Scenic Spot Updated",
+            "summary": "Updated multilingual entry",
+            "description": "Updated temporary multilingual entry.",
+            "tips": "Still temporary"
+          }
+        ]
+      },
+      "request": {
+        "params": {
+          "scenicSpotId": 12
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_MEDIA_LIST_AFTER_CREATE",
+      "method": "GET",
+      "path": "/api/admin/scenic/media/list",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/media/list",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": []
+      },
+      "request": {
+        "params": {
+          "scenicSpotId": 12
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_SCENIC_DELETE",
+      "method": "POST",
+      "path": "/api/admin/scenic/delete",
+      "url": "http://127.0.0.1:8137/api/admin/scenic/delete",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "id": 12
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_ROUTE_SAVE_UPDATE",
+      "method": "POST",
+      "path": "/api/admin/route/save",
+      "url": "http://127.0.0.1:8137/api/admin/route/save",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": 8
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "id": 8,
+          "routeName": "测试路线更新-20260616_110047",
+          "theme": "历史文化",
+          "coverUrl": "https://example.com/route-cover.jpg",
+          "summary": "更新后的路线摘要",
+          "description": "这是自动化测试脚本创建并更新的路线。",
+          "suggestDuration": "1天",
+          "suitableCrowd": "家庭",
+          "spots": [
+            {
+              "scenicSpotId": 1,
+              "sortNo": 1,
+              "stayDuration": "2小时"
+            },
+            {
+              "scenicSpotId": 2,
+              "sortNo": 2,
+              "stayDuration": "2小时"
+            }
+          ]
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_ROUTE_STATUS",
+      "method": "POST",
+      "path": "/api/admin/route/status",
+      "url": "http://127.0.0.1:8137/api/admin/route/status",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": {
+          "id": 8,
+          "status": 0
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_ROUTE_STATUS_RESTORE",
+      "method": "POST",
+      "path": "/api/admin/route/status",
+      "url": "http://127.0.0.1:8137/api/admin/route/status",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": {
+          "id": 8,
+          "status": 1
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_ROUTE_I18N_SAVE_CREATE",
+      "method": "POST",
+      "path": "/api/admin/route/i18n/save",
+      "url": "http://127.0.0.1:8137/api/admin/route/i18n/save",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": 4
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "routeId": 8,
+          "languageCode": "fr-FR",
+          "title": "Test Route",
+          "summary": "Created by API smoke test",
+          "description": "Temporary multilingual route content for testing.",
+          "travelTips": "Temporary record"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_ROUTE_I18N_SAVE_UPDATE",
+      "method": "POST",
+      "path": "/api/admin/route/i18n/save",
+      "url": "http://127.0.0.1:8137/api/admin/route/i18n/save",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": 4
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "id": 4,
+          "routeId": 8,
+          "languageCode": "fr-FR",
+          "title": "Test Route Updated",
+          "summary": "Updated temporary route multilingual content",
+          "description": "Updated temporary multilingual route content.",
+          "travelTips": "Still temporary"
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_ROUTE_I18N_LIST_AFTER_CREATE",
+      "method": "GET",
+      "path": "/api/admin/route/i18n/list",
+      "url": "http://127.0.0.1:8137/api/admin/route/i18n/list",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": [
+          {
+            "id": 4,
+            "routeId": 8,
+            "languageCode": "fr-FR",
+            "title": "Test Route Updated",
+            "summary": "Updated temporary route multilingual content",
+            "description": "Updated temporary multilingual route content.",
+            "travelTips": "Still temporary"
+          }
+        ]
+      },
+      "request": {
+        "params": {
+          "routeId": 8
+        },
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "ADMIN_ROUTE_DELETE",
+      "method": "POST",
+      "path": "/api/admin/route/delete",
+      "url": "http://127.0.0.1:8137/api/admin/route/delete",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": null,
+        "json": {
+          "id": 8
+        },
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "AUTH_LOGOUT_TOURIST",
+      "method": "POST",
+      "path": "/api/auth/logout",
+      "url": "http://127.0.0.1:8137/api/auth/logout",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": null,
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "AUTH_ME_AFTER_TOURIST_LOGOUT",
+      "method": "GET",
+      "path": "/api/auth/me",
+      "url": "http://127.0.0.1:8137/api/auth/me",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": null
+      },
+      "request": {
+        "params": null,
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "AUTH_LOGOUT_ADMIN",
+      "method": "POST",
+      "path": "/api/auth/logout",
+      "url": "http://127.0.0.1:8137/api/auth/logout",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": true
+      },
+      "request": {
+        "params": null,
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    },
+    {
+      "name": "AUTH_ME_AFTER_ADMIN_LOGOUT",
+      "method": "GET",
+      "path": "/api/auth/me",
+      "url": "http://127.0.0.1:8137/api/auth/me",
+      "status": "PASS",
+      "http_status": 200,
+      "response_code": 0,
+      "response_message": "ok",
+      "response_body": {
+        "code": 0,
+        "message": "ok",
+        "data": null
+      },
+      "request": {
+        "params": null,
+        "json": null,
+        "data": null,
+        "has_files": false,
+        "headers": {}
+      },
+      "note": ""
+    }
+  ]
+}

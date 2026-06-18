@@ -1,0 +1,20 @@
+.DS_Store
+.idea/
+*.iml
+target/
+*.log
+logs/
+
+# Build / IDE files
+out/
+classes/
+
+# Local env / secrets
+.env
+.env.*
+application-local.yml
+application-dev-local.yml
+
+# Maven wrapper temp files
+.mvn/wrapper/maven-wrapper.jar
+

@@ -1,0 +1,21 @@
+server:
+  port: 8137
+  servlet:
+    session:
+      timeout: 1440m
+
+spring:
+  application:
+    name: ai-guide-backend
+  profiles:
+    active: dev
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  jackson:
+    time-zone: Asia/Shanghai
+    date-format: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
