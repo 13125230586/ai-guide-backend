@@ -15,6 +15,8 @@ public interface AiGuideService {
 
     AiGuideVO commonQuestion(Long userId, AiGuideReq req);
 
+    AiGuideVO recognizeScenic(Long userId, AiRecognizeReq req);
+
     AiGuideVO translateAnswer(Long userId, AiGuideReq req);
 
     PageResponse<AiGuideLogVO> pageAiLogs(AiLogPageReq req);

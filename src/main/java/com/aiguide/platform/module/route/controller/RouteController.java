@@ -3,6 +3,7 @@ package com.aiguide.platform.module.route.controller;
 import com.aiguide.platform.common.BaseResponse;
 import com.aiguide.platform.common.ResultUtils;
 import com.aiguide.platform.common.model.PageResponse;
+import com.aiguide.platform.common.util.LanguageUtil;
 import com.aiguide.platform.module.route.model.req.RoutePageReq;
 import com.aiguide.platform.module.route.model.vo.RouteI18nVO;
 import com.aiguide.platform.module.route.model.vo.RouteVO;
@@ -12,6 +13,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -26,14 +28,16 @@ public class RouteController {
 
     @GetMapping("/page")
     @ApiOperation("路线分页列表")
-    public BaseResponse<PageResponse<RouteVO>> page(RoutePageReq req) {
-        return ResultUtils.success(routeService.pageRoutes(req));
+    public BaseResponse<PageResponse<RouteVO>> page(RoutePageReq req, HttpServletRequest request) {
+        String languageCode = LanguageUtil.getLanguageCode(request);
+        return ResultUtils.success(routeService.pageRoutes(req, languageCode));
     }
 
     @GetMapping("/detail")
     @ApiOperation("路线详情")
-    public BaseResponse<RouteVO> detail(@RequestParam Long id) {
-        return ResultUtils.success(routeService.getRouteDetail(id));
+    public BaseResponse<RouteVO> detail(@RequestParam Long id, HttpServletRequest request) {
+        String languageCode = LanguageUtil.getLanguageCode(request);
+        return ResultUtils.success(routeService.getRouteDetail(id, languageCode));
     }
 
     @GetMapping("/recommend")
@@ -41,8 +45,10 @@ public class RouteController {
     public BaseResponse<List<RouteVO>> recommend(
             @RequestParam(required = false) String theme,
             @RequestParam(required = false) String suitableCrowd,
-            @RequestParam(defaultValue = "10") int limit) {
-        return ResultUtils.success(routeService.recommendRoutes(theme, suitableCrowd, limit));
+            @RequestParam(defaultValue = "10") int limit,
+            HttpServletRequest request) {
+        String languageCode = LanguageUtil.getLanguageCode(request);
+        return ResultUtils.success(routeService.recommendRoutes(theme, suitableCrowd, limit, languageCode));
     }
 
     @GetMapping("/i18n/detail")

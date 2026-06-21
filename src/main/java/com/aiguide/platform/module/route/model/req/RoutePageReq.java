@@ -11,4 +11,5 @@ public class RoutePageReq extends PageRequest {
     private String routeName;
     private Integer routeStatus;
     private String suitableCrowd;
+    private String languageCode;
 }

@@ -13,5 +13,7 @@ public interface FavoriteService extends IService<UserFavorite> {
 
     PageResponse<FavoriteVO> pageMyFavorites(Long userId, FavoritePageReq req);
 
+    PageResponse<FavoriteVO> pageMyFavorites(Long userId, FavoritePageReq req, String languageCode);
+
     boolean isFavorite(Long userId, String bizType, Long bizId);
 }

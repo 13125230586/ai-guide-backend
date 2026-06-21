@@ -11,7 +11,11 @@ import java.util.List;
 public interface RouteService extends IService<GuideRoute> {
     PageResponse<RouteVO> pageRoutes(RoutePageReq req);
 
+    PageResponse<RouteVO> pageRoutes(RoutePageReq req, String languageCode);
+
     RouteVO getRouteDetail(Long id);
+
+    RouteVO getRouteDetail(Long id, String languageCode);
 
     Long saveRoute(RouteSaveReq req, Long userId);
 
@@ -22,4 +26,6 @@ public interface RouteService extends IService<GuideRoute> {
     void updateRouteStatus(Long id, Integer status);
 
     List<RouteVO> recommendRoutes(String theme, String suitableCrowd, int limit);
+
+    List<RouteVO> recommendRoutes(String theme, String suitableCrowd, int limit, String languageCode);
 }

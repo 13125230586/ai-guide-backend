@@ -12,4 +12,5 @@ public class ScenicSpotPageReq extends PageRequest {
     private String spotName;
     private Integer spotStatus;
     private String keyword;
+    private String languageCode;
 }

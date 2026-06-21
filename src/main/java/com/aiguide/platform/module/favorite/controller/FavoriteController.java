@@ -3,6 +3,7 @@ package com.aiguide.platform.module.favorite.controller;
 import com.aiguide.platform.common.BaseResponse;
 import com.aiguide.platform.common.ResultUtils;
 import com.aiguide.platform.common.model.PageResponse;
+import com.aiguide.platform.common.util.LanguageUtil;
 import com.aiguide.platform.common.util.UserContextUtil;
 import com.aiguide.platform.module.favorite.model.req.FavoriteAddReq;
 import com.aiguide.platform.module.favorite.model.req.FavoritePageReq;
@@ -43,7 +44,8 @@ public class FavoriteController {
     @ApiOperation("我的收藏列表")
     public BaseResponse<PageResponse<FavoriteVO>> page(FavoritePageReq req, HttpServletRequest request) {
         Long userId = UserContextUtil.getLoginUserId(request);
-        return ResultUtils.success(favoriteService.pageMyFavorites(userId, req));
+        String languageCode = LanguageUtil.getLanguageCode(request);
+        return ResultUtils.success(favoriteService.pageMyFavorites(userId, req, languageCode));
     }
 
     @GetMapping("/check")

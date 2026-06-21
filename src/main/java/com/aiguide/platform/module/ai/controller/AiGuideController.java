@@ -52,6 +52,13 @@ public class AiGuideController {
         return ResultUtils.success(aiGuideService.commonQuestion(userId, req));
     }
 
+    @PostMapping("/recognize-scenic")
+    @ApiOperation("上传图片识别景点")
+    public BaseResponse<AiGuideVO> recognizeScenic(@Valid @RequestBody AiRecognizeReq req, HttpServletRequest request) {
+        Long userId = UserContextUtil.getLoginUserId(request);
+        return ResultUtils.success(aiGuideService.recognizeScenic(userId, req));
+    }
+
     @PostMapping("/translate-answer")
     @ApiOperation("多语种翻译")
     public BaseResponse<AiGuideVO> translateAnswer(@Valid @RequestBody AiGuideReq req, HttpServletRequest request) {

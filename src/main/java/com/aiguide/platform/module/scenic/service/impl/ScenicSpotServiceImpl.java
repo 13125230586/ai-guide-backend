@@ -5,14 +5,17 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.aiguide.platform.common.exception.ErrorCode;
 import com.aiguide.platform.common.model.PageResponse;
+import com.aiguide.platform.common.util.LanguageUtil;
 import com.aiguide.platform.common.util.ThrowUtils;
 import com.aiguide.platform.mapper.ScenicCategoryMapper;
 import com.aiguide.platform.mapper.ScenicSpotMapper;
 import com.aiguide.platform.model.entity.ScenicCategory;
 import com.aiguide.platform.model.entity.ScenicSpot;
+import com.aiguide.platform.module.scenic.model.vo.ScenicSpotI18nVO;
 import com.aiguide.platform.module.scenic.model.req.ScenicSpotPageReq;
 import com.aiguide.platform.module.scenic.model.req.ScenicSpotSaveReq;
 import com.aiguide.platform.module.scenic.model.vo.ScenicSpotVO;
+import com.aiguide.platform.module.scenic.service.ScenicSpotI18nService;
 import com.aiguide.platform.module.scenic.service.ScenicSpotService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
@@ -28,9 +31,16 @@ public class ScenicSpotServiceImpl extends ServiceImpl<ScenicSpotMapper, ScenicS
 
     @Resource
     private ScenicCategoryMapper categoryMapper;
+    @Resource
+    private ScenicSpotI18nService scenicSpotI18nService;
 
     @Override
     public PageResponse<ScenicSpotVO> pageScenicSpots(ScenicSpotPageReq req) {
+        return pageScenicSpots(req, req.getLanguageCode());
+    }
+
+    @Override
+    public PageResponse<ScenicSpotVO> pageScenicSpots(ScenicSpotPageReq req, String languageCode) {
         LambdaQueryWrapper<ScenicSpot> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(req.getCategoryId() != null, ScenicSpot::getCategoryId, req.getCategoryId());
         wrapper.like(StringUtils.isNotBlank(req.getCity()), ScenicSpot::getCity, req.getCity());
@@ -41,15 +51,22 @@ public class ScenicSpotServiceImpl extends ServiceImpl<ScenicSpotMapper, ScenicS
                     .or().like(ScenicSpot::getSummary, req.getKeyword())
                     .or().like(ScenicSpot::getCity, req.getKeyword()));
         }
-        wrapper.orderByDesc(ScenicSpot::getHotScore).orderByDesc(ScenicSpot::getCreateTime);
+        wrapper.orderByDesc(ScenicSpot::getViewCount).orderByDesc(ScenicSpot::getCreateTime);
 
         Page<ScenicSpot> page = page(new Page<>(req.getCurrent(), req.getPageSize()), wrapper);
-        List<ScenicSpotVO> voList = page.getRecords().stream().map(this::toVO).collect(Collectors.toList());
+        List<ScenicSpotVO> voList = page.getRecords().stream()
+                .map(spot -> toVO(spot, languageCode))
+                .collect(Collectors.toList());
         return PageResponse.of(page, voList);
     }
 
     @Override
     public ScenicSpotVO getScenicSpotDetail(Long id) {
+        return getScenicSpotDetail(id, null);
+    }
+
+    @Override
+    public ScenicSpotVO getScenicSpotDetail(Long id, String languageCode) {
         ScenicSpot spot = getById(id);
         ThrowUtils.throwIf(spot == null, ErrorCode.NOT_FOUND_ERROR, "景点不存在");
         // 增加浏览量
@@ -57,7 +74,9 @@ public class ScenicSpotServiceImpl extends ServiceImpl<ScenicSpotMapper, ScenicS
         update.setId(id);
         update.setViewCount(spot.getViewCount() + 1);
         updateById(update);
-        return toVO(spot);
+        ScenicSpotVO vo = toVO(spot, languageCode);
+        vo.setViewCount(spot.getViewCount() + 1);
+        return vo;
     }
 
     @Override
@@ -113,7 +132,7 @@ public class ScenicSpotServiceImpl extends ServiceImpl<ScenicSpotMapper, ScenicS
         spot.setTips(req.getTips());
     }
 
-    private ScenicSpotVO toVO(ScenicSpot spot) {
+    private ScenicSpotVO toVO(ScenicSpot spot, String languageCode) {
         ScenicSpotVO vo = new ScenicSpotVO();
         vo.setId(spot.getId());
         vo.setCategoryId(spot.getCategoryId());
@@ -137,6 +156,30 @@ public class ScenicSpotServiceImpl extends ServiceImpl<ScenicSpotMapper, ScenicS
         if (category != null) {
             vo.setCategoryName(category.getCategoryName());
         }
+        applyI18n(vo, spot.getId(), languageCode);
         return vo;
+    }
+
+    private void applyI18n(ScenicSpotVO vo, Long scenicSpotId, String languageCode) {
+        if (LanguageUtil.isDefaultLanguage(languageCode)) {
+            return;
+        }
+        ScenicSpotI18nVO i18nVO = scenicSpotI18nService.getBySpotAndLang(
+                scenicSpotId, LanguageUtil.normalizeLanguageCode(languageCode));
+        if (i18nVO == null) {
+            return;
+        }
+        if (StringUtils.isNotBlank(i18nVO.getTitle())) {
+            vo.setSpotName(i18nVO.getTitle());
+        }
+        if (StringUtils.isNotBlank(i18nVO.getSummary())) {
+            vo.setSummary(i18nVO.getSummary());
+        }
+        if (StringUtils.isNotBlank(i18nVO.getDescription())) {
+            vo.setDescription(i18nVO.getDescription());
+        }
+        if (StringUtils.isNotBlank(i18nVO.getTips())) {
+            vo.setTips(i18nVO.getTips());
+        }
     }
 }

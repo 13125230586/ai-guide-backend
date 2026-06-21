@@ -26,6 +26,7 @@ public class BusinessConstant {
     public static final String AI_BIZ_RECOMMEND = "RECOMMEND";
     public static final String AI_BIZ_TRANSLATE = "TRANSLATE";
     public static final String AI_BIZ_QUESTION = "QUESTION";
+    public static final String AI_BIZ_RECOGNIZE = "RECOGNIZE";
 
     // 语言编码
     public static final String LANG_ZH = "zh-CN";

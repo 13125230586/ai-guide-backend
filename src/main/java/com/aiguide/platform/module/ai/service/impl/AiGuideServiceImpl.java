@@ -25,6 +25,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.Base64;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -112,6 +117,37 @@ public class AiGuideServiceImpl implements AiGuideService {
     }
 
     @Override
+    public AiGuideVO recognizeScenic(Long userId, AiRecognizeReq req) {
+        ThrowUtils.throwIf(req == null || req.getFileUrl() == null || req.getFileUrl().trim().isEmpty(),
+                ErrorCode.PARAMS_ERROR, "附件地址不能为空");
+        String langHint = getLangHint(req.getLanguageCode());
+        String question = req.getQuestion() == null || req.getQuestion().trim().isEmpty()
+                ? "请分析图片里可能是哪处景点，并说明判断依据。"
+                : req.getQuestion().trim();
+        String scenicContext = buildScenicContext();
+        String prompt = String.format(
+                "你是一位智能导游。请根据用户上传的图片或附件分析它最可能是哪处景点。"
+                        + "如果能匹配系统景点库，请优先给出库内景点名称；如果无法确定，请给出可能地点和置信度。"
+                        + "\n用户问题：%s"
+                        + "\n附件名称：%s"
+                        + "\n附件地址：%s"
+                        + "\n系统景点库：%s"
+                        + "\n回答格式：1）可能景点 2）判断依据 3）所在城市/地区 4）游玩建议 5）如果不确定请说明原因。"
+                        + "\n%s",
+                question,
+                req.getFileName() != null ? req.getFileName() : "未命名附件",
+                req.getFileUrl(),
+                scenicContext,
+                langHint
+        );
+        boolean imageFile = isImageFile(req.getFileType(), req.getFileUrl());
+        List<String> imageUrls = imageFile ? Collections.singletonList(toImageDataUrl(req)) : Collections.emptyList();
+        String requestSummary = "识别景点：" + (req.getFileName() != null ? req.getFileName() : req.getFileUrl());
+        return callAndLog(userId, BusinessConstant.AI_BIZ_RECOGNIZE, req.getLanguageCode(),
+                null, null, prompt, requestSummary, imageUrls);
+    }
+
+    @Override
     public AiGuideVO translateAnswer(Long userId, AiGuideReq req) {
         String langHint = getLangHint(req.getLanguageCode());
         String prompt = String.format(
@@ -157,6 +193,13 @@ public class AiGuideServiceImpl implements AiGuideService {
     private AiGuideVO callAndLog(Long userId, String bizType, String languageCode,
                                   Long scenicSpotId, Long routeId,
                                   String prompt, String requestSummary) {
+        return callAndLog(userId, bizType, languageCode, scenicSpotId, routeId, prompt, requestSummary, Collections.emptyList());
+    }
+
+    private AiGuideVO callAndLog(Long userId, String bizType, String languageCode,
+                                  Long scenicSpotId, Long routeId,
+                                  String prompt, String requestSummary,
+                                  List<String> imageUrls) {
         long start = System.currentTimeMillis();
         AiGuideLog logEntity = new AiGuideLog();
         logEntity.setUserId(userId);
@@ -171,7 +214,13 @@ public class AiGuideServiceImpl implements AiGuideService {
         boolean success = false;
         try {
             log.info("AI调用开始 userId:{} bizType:{} scenicSpotId:{} routeId:{}", userId, bizType, scenicSpotId, routeId);
-            answer = miniMaxManager.chat(SYSTEM_PROMPT, prompt);
+            if (imageUrls != null && !imageUrls.isEmpty() && BusinessConstant.AI_BIZ_RECOGNIZE.equals(bizType)) {
+                answer = miniMaxManager.understandImage(prompt, imageUrls.get(0));
+            } else if (imageUrls != null && !imageUrls.isEmpty()) {
+                answer = miniMaxManager.chatWithImages(SYSTEM_PROMPT, prompt, imageUrls);
+            } else {
+                answer = miniMaxManager.chat(SYSTEM_PROMPT, prompt);
+            }
             long cost = System.currentTimeMillis() - start;
             success = true;
             logEntity.setResponseSummary(truncate(answer, 4000));
@@ -195,6 +244,102 @@ public class AiGuideServiceImpl implements AiGuideService {
         vo.setLanguageCode(languageCode);
         vo.setCostMillis(logEntity.getCostMillis());
         return vo;
+    }
+
+    private String buildScenicContext() {
+        LambdaQueryWrapper<ScenicSpot> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(ScenicSpot::getSpotStatus, 1)
+                .orderByDesc(ScenicSpot::getViewCount)
+                .last("LIMIT 30");
+        List<ScenicSpot> spots = scenicSpotMapper.selectList(wrapper);
+        if (spots == null || spots.isEmpty()) {
+            return "暂无";
+        }
+        return spots.stream()
+                .map(spot -> spot.getSpotName() + "（" + nullToEmpty(spot.getCity()) + "，" + nullToEmpty(spot.getSummary()) + "）")
+                .collect(Collectors.joining("；"));
+    }
+
+    private boolean isImageFile(String fileType, String fileUrl) {
+        String lowerType = fileType == null ? "" : fileType.trim().toLowerCase();
+        if (lowerType.startsWith(".")) {
+            lowerType = lowerType.substring(1);
+        }
+        if (lowerType.startsWith("image/")
+                || "jpg".equals(lowerType)
+                || "jpeg".equals(lowerType)
+                || "png".equals(lowerType)
+                || "webp".equals(lowerType)
+                || "gif".equals(lowerType)
+                || "bmp".equals(lowerType)) {
+            return true;
+        }
+        String lowerUrl = fileUrl == null ? "" : fileUrl.toLowerCase();
+        return lowerUrl.contains(".jpg")
+                || lowerUrl.contains(".jpeg")
+                || lowerUrl.contains(".png")
+                || lowerUrl.contains(".webp")
+                || lowerUrl.contains(".gif")
+                || lowerUrl.contains(".bmp");
+    }
+
+    private String toImageDataUrl(AiRecognizeReq req) {
+        try (InputStream inputStream = new URL(req.getFileUrl()).openStream();
+             ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
+            byte[] buffer = new byte[8192];
+            int len;
+            while ((len = inputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, len);
+            }
+            String mimeType = resolveImageMimeType(req.getFileType(), req.getFileUrl());
+            return "data:" + mimeType + ";base64," + Base64.getEncoder().encodeToString(outputStream.toByteArray());
+        } catch (Exception exception) {
+            log.warn("图片转DataUrl失败 fileUrl:{}", req.getFileUrl(), exception);
+            return req.getFileUrl();
+        }
+    }
+
+    private String resolveImageMimeType(String fileType, String fileUrl) {
+        if (fileType != null && fileType.startsWith("image/")) {
+            return fileType;
+        }
+        String extension = fileType == null ? "" : fileType.trim().toLowerCase();
+        if (extension.startsWith(".")) {
+            extension = extension.substring(1);
+        }
+        if ("png".equals(extension)) {
+            return "image/png";
+        }
+        if ("webp".equals(extension)) {
+            return "image/webp";
+        }
+        if ("gif".equals(extension)) {
+            return "image/gif";
+        }
+        if ("bmp".equals(extension)) {
+            return "image/bmp";
+        }
+        if ("jpg".equals(extension) || "jpeg".equals(extension)) {
+            return "image/jpeg";
+        }
+        String lower = fileUrl == null ? "" : fileUrl.toLowerCase();
+        if (lower.endsWith(".png")) {
+            return "image/png";
+        }
+        if (lower.endsWith(".webp")) {
+            return "image/webp";
+        }
+        if (lower.endsWith(".gif")) {
+            return "image/gif";
+        }
+        if (lower.endsWith(".bmp")) {
+            return "image/bmp";
+        }
+        return "image/jpeg";
+    }
+
+    private String nullToEmpty(String value) {
+        return value == null ? "" : value;
     }
 
     private String getLangHint(String languageCode) {

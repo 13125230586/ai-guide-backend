@@ -10,7 +10,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ScenicSpotService extends IService<ScenicSpot> {
     PageResponse<ScenicSpotVO> pageScenicSpots(ScenicSpotPageReq req);
 
+    PageResponse<ScenicSpotVO> pageScenicSpots(ScenicSpotPageReq req, String languageCode);
+
     ScenicSpotVO getScenicSpotDetail(Long id);
+
+    ScenicSpotVO getScenicSpotDetail(Long id, String languageCode);
 
     Long saveScenicSpot(ScenicSpotSaveReq req, Long userId);
 

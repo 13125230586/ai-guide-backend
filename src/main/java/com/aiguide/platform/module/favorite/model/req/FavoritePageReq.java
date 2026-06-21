@@ -8,4 +8,5 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class FavoritePageReq extends PageRequest {
     private String bizType;
+    private String languageCode;
 }
